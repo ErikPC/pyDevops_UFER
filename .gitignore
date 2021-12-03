@@ -1,0 +1,8 @@
+.vscode/
+.pytest_cache/
+__pycache__/
+venv/
+pyvenv.cfg
+.pylintrc
+.idea/
+.src\services\validate_schema\ValidateSchemaComentado.py
