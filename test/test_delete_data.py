@@ -11,7 +11,7 @@ collection.insert_one(
         'nombre': 'Joan',
         'edad': 20,
         'deportes': ['padel', 'futbol', 'boxeo'],
-        "services":"puto"
+        "services":"uber"
     }
 )
 
