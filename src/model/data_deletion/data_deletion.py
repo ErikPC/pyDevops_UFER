@@ -14,12 +14,22 @@ collection.insert_one(
 
 
 def enseñar_items(database):
-    keys = ['nombre', 'edad', 'deportes']
-    for item in collection.find({}):
+    #     keys = ['nombre', 'edad', 'deportes']
+    for item in collection.find({}, {'_id': False}):
         print(item)
-    while selector == True:
-        key_entrada = input("Escribe la key quieres filtrar / si no quieres escribe fin")
-        if key_entrada in keys:
-            collection.find({key_entrada})
-            break
-        selector = False
+
+
+#     while selector == True:
+#         key_entrada = input("Escribe la key quieres filtrar / si no quieres escribe fin")
+#         if key_entrada in keys:
+#             collection.find({key_entrada})
+#             break
+#         selector = False
+items = enseñar_items(database)
+
+
+def delete_data(database):
+    # items (funcion)
+    # funcion de seleccionar servicio
+    # comparar que el input esta bien escritos
+    # eliminar item por servicio
