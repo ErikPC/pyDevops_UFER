@@ -1,0 +1,1 @@
+from .data_deletion import delete_data

@@ -11,8 +11,8 @@ services = list()
 database = connect_db()
 
 # get the collections
-UFER = get_collection(database, "ufer")
-REVIEWS = get_collection(database, "reviews")
+UFER = database.ufer
+REVIEWS = database.reviews
 
 # here the user specify the operation to perform (modify services or create content in the website)
 
