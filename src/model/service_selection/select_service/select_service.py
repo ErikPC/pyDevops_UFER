@@ -6,5 +6,3 @@ def select_service(services):
     print('the selected service is', service)
     return service
 
-
-select_service(['Ufer Gold', 'Ufer Lite', 'Ufer Bus'])
