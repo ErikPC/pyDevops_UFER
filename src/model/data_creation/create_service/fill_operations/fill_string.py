@@ -1,4 +1,4 @@
-def fill_string(key_name, value):
+def fill_string(key_name):
     while True:
         try:
             value = input(key_name + ": ").strip()

@@ -1,4 +1,4 @@
-def fill_int(key_name, value):
+def fill_int(key_name):
     while True:
         try:
             value = int(input(key_name + ": ").strip())

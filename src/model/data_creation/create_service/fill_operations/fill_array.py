@@ -1,4 +1,5 @@
-def fill_array(array):
+def fill_array():
+    array = list()
     finish = False
     print("Add amenities. Press 'exit' to stop")
     while not finish:
@@ -7,4 +8,4 @@ def fill_array(array):
             finish = True
         else:
             array.append(user_input)
-
+    return array
