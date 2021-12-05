@@ -14,5 +14,5 @@ database = connect_db()
 UFER = database.ufer
 REVIEWS = database.reviews
 
-# here the user specify the operation to perform (modify services or create content in the website)
+# here the user specify the operation to perform
 
