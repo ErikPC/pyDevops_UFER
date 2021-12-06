@@ -35,6 +35,7 @@ def create_service(collection):
     document['seats'] = fill_string('seats')
     document['propulsion'] = fill_string('propulsion')
     document["top_speed"] = fill_int('top speed')
+    document['price'] = fill_int('price')
     document["amenities"] = fill_array()
 
     # schema validation
