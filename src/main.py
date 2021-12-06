@@ -15,5 +15,3 @@ UFER = database.ufer
 REVIEWS = database.reviews
 
 # here the user specify the operation to perform
-from src.model.content_generation.file_generation.generate_files import generate_files
-generate_files(UFER)
