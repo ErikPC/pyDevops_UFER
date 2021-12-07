@@ -3,6 +3,7 @@ from src.model.data_creation.create_service.fill_operations.fill_int import fill
 from src.model.data_creation.create_service.fill_operations.fill_string import fill_string
 from src.model.data_validation import validate_schema
 from src.model.data_validation.validate_schema import validate_schema
+from src.repository.db_connection.config_params import *
 
 
 def create_service(collection):
@@ -15,6 +16,7 @@ def create_service(collection):
         "seats": "",
         "propulsion": "",
         "top_speed": 0,
+        'price': 0,
         "amenities": []
     }
 
@@ -26,17 +28,14 @@ def create_service(collection):
     # tell the user how to fill the values
     print(user_instructions)
 
-    # functions to fill every value of the dict
-    document['name'] = fill_string('name')
-    document["description"] = fill_string('description')
-    document['driver'] = fill_string('driver')
-    document["passengers"] = fill_int('passengers')
-    document['privacy'] = fill_string('privacy')
-    document['seats'] = fill_string('seats')
-    document['propulsion'] = fill_string('propulsion')
-    document["top_speed"] = fill_int('top speed')
-    document['price'] = fill_int('price')
-    document["amenities"] = fill_array()
+    # fill every value of the empty document
+    for index in range(len(PYDEVOPS_KEYS)):
+        if PYDEVOPS_VALUE_TYPES[index] == str:
+            document[PYDEVOPS_KEYS[index]] = fill_string(PYDEVOPS_KEYS[index])
+        elif PYDEVOPS_VALUE_TYPES[index] == int:
+            document[PYDEVOPS_KEYS[index]] = fill_int(PYDEVOPS_KEYS[index])
+        elif PYDEVOPS_VALUE_TYPES[index] == list:
+            document[PYDEVOPS_KEYS[index]] = fill_array()
 
     # schema validation
     if validate_schema(document):
