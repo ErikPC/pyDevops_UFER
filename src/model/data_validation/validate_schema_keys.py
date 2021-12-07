@@ -1,5 +1,4 @@
-PYDEVOPS_KEYS = ['name', 'description', 'driver', 'passengers', 'privacy', 'seats', 'propulsion', 'top_speed', 'price',
-                 'amenities']
+from src.repository.db_connection.config_params import PYDEVOPS_KEYS
 
 
 def validate_keys(schema_to_validate):
