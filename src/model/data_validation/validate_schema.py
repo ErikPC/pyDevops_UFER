@@ -6,6 +6,7 @@ def validate_schema(schema):
 
     if not (validate_keys(schema) and validate_value_types(schema)):
         print("invalid schema")
+        print(schema)
         return False
     print("the schema is correct")
     return True
