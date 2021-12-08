@@ -7,7 +7,7 @@ nav {
     overflow: hidden;
     width: 100%;
   }
-  
+
   /* Style the links inside the navigation bar */
   nav a {
     float: left;
@@ -18,19 +18,19 @@ nav {
     text-decoration: none;
     font-size: 17px;
   }
-  
+
   /* Change the color of links on hover */
   nav a:hover {
     background-color: #ddd;
     color: black;
   }
-  
+
   /* Add an active class to highlight the current page */
   nav a.active {
     background-color: #04AA6D;
     color: white;
   }
-  
+
   /* Hide the link that should open and close the topnav on small screens */
   nav .icon {
     display: none;
@@ -42,7 +42,7 @@ nav {
   }
 
   .content {
-      font-size: larger;
+     color: rebeccapurple;
   }
 
   footer {
@@ -60,5 +60,17 @@ nav {
   }
 
   .review h4 {
-    color: red;
+
+    color: #04AA6D;
   }
+
+@media  only screen and (min-width: 768px) {
+
+  nav { flex-direction: row; }
+  .service-container {
+    display: flex;
+  }
+  .service-container .service-list { width: 20%; }
+  .service-container .service { flex: 1; }
+
+}
