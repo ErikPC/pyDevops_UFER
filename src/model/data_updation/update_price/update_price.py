@@ -1,6 +1,6 @@
 from src.model.data_extraction.values_extraction import get_values
 from src.model.service_selection.select_service.select_service import select_service
-from pymongo.errors import OperationFailure
+from pymongo.errors import PyMongoError
 
 
 def update_price(collection):
@@ -26,13 +26,13 @@ def update_price(collection):
         except ValueError:
             print('Invalid Input. price must be an int.')
 
-    # filter
+    # what to update
     new_price = {"$set": {"price": input_value}}
 
-    # operation to the collection
+    # update operation
     try:
         collection.update_one(query, new_price)
-    except OperationFailure:
+    except PyMongoError:
         print("Operation error, price not updated successfully")
         return False
     else:

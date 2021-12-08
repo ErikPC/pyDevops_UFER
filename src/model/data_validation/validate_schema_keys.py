@@ -5,7 +5,7 @@ def validate_keys(schema_to_validate):
     assert isinstance(schema_to_validate, dict)
     is_valid = False
     counter = 0
-    print("validating schema keys")
+    print("validating schema keys...")
 
     for key in schema_to_validate.keys():
 

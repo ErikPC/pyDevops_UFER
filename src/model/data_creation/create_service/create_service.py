@@ -4,10 +4,11 @@ from src.model.data_creation.create_service.fill_operations.fill_string import f
 from src.model.data_validation import validate_schema
 from src.model.data_validation.validate_schema import validate_schema
 from src.repository.db_connection.config_params import *
-from pymongo.errors import OperationFailure
+from pymongo.errors import PyMongoError
 
 
 def create_service(collection):
+
     # generate empty_values document
     document = {
         "name": "",
@@ -30,7 +31,7 @@ def create_service(collection):
     # tell the user how to fill the values
     print(user_instructions)
 
-    # fill every value of the empty document (depending on the value type it has)
+    # fill document values (depending on the value type it has)
     for index in range(len(PYDEVOPS_KEYS)):
         if PYDEVOPS_VALUE_TYPES[index] == str:
             if PYDEVOPS_KEYS[index] == 'name':
@@ -47,7 +48,7 @@ def create_service(collection):
 
         try:
             new_document_id = collection.insert_one(document)
-        except OperationFailure:
+        except PyMongoError:
             print('the insert operation failed')
         else:
             print('insertion done successfully')
