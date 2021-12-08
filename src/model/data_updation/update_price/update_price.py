@@ -1,5 +1,6 @@
 from src.model.data_extraction.values_extraction import get_values
 from src.model.service_selection.select_service.select_service import select_service
+from src.model.data_updation.update_price.get_price import get_price
 from pymongo.errors import PyMongoError
 
 
@@ -17,11 +18,18 @@ def update_price(collection):
     # where to do the operation
     query = {"name": service}
 
+    # show current price
+    current_price = get_price(collection, service)
+    print('current price:', current_price)
+
     while True:
 
         try:
             input_value = int(input("select the new price: "))
-            break
+            if input_value != current_price and input_value > 0:
+                break
+            else:
+                print('Price must be diferent from the current one and greater than 0!')
 
         except ValueError:
             print('Invalid Input. price must be an int.')
