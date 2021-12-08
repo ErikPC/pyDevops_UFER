@@ -10,8 +10,8 @@ def delete_data(collection):
     print('servicios disponibles:', servicios)
 
     # delete document from the database
-    servicio_eliminar = input("Escribe el servicio que quieres eliminar: \n")
-    confirm = input("Vuelve a escribir el servicio: \n")
+    servicio_eliminar = input("Escribe el servicio que quieres eliminar: \n").strip().title()
+    confirm = input("Vuelve a escribir el servicio: \n").strip().title()
 
     if servicio_eliminar != confirm:
         print("Los servicios no coinciden")
@@ -23,7 +23,7 @@ def delete_data(collection):
         except OperationFailure:
             print("La operación ha fallado")
         else:
-            print("Se ha eliminado correctamente")
+            print("Servicio eliminado correctamente")
             return True
 
     else:
