@@ -1,7 +1,7 @@
 from src.model.data_extraction.values_extraction import get_values
 from src.model.service_selection.select_service.select_service import select_service
 from src.model.data_updation.update_price.get_price import get_price
-from pymongo.errors import PyMongoError
+from pymongo.errors import OperationFailure
 
 
 def update_price(collection):
@@ -41,7 +41,7 @@ def update_price(collection):
     # update operation
     try:
         collection.update_one(query, new_price)
-    except PyMongoError:
+    except OperationFailure:
         print("Operation error, price not updated successfully")
         return False
     else:

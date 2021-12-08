@@ -1,5 +1,5 @@
 from src.model.data_validation.validate_schema import validate_schema
-from pymongo.errors import PyMongoError
+from pymongo.errors import OperationFailure
 
 
 def load_data(collection):

@@ -1,4 +1,4 @@
-from pymongo.errors import PyMongoError
+from pymongo.errors import OperationFailure
 
 
 def get_values(collection, key):
@@ -6,7 +6,7 @@ def get_values(collection, key):
     try:
         for item in collection.find({}, {'_id': False}):
             values.append(item[key])
-    except PyMongoError:
+    except OperationFailure:
         print("operation get_values failed")
     else:
         return values

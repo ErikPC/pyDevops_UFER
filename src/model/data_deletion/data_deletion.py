@@ -1,5 +1,5 @@
 from src.model.data_extraction.values_extraction import get_values
-from pymongo.errors import PyMongoError
+from pymongo.errors import OperationFailure
 
 
 def delete_data(collection):
@@ -20,7 +20,7 @@ def delete_data(collection):
 
         try:
             collection.delete_one({"name": servicio_eliminar})
-        except PyMongoError:
+        except OperationFailure:
             print("La operación ha fallado")
         else:
             print("Servicio eliminado correctamente")

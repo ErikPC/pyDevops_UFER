@@ -4,7 +4,7 @@ from src.model.data_creation.create_service.fill_operations.fill_string import f
 from src.model.data_validation import validate_schema
 from src.model.data_validation.validate_schema import validate_schema
 from src.repository.db_connection.config_params import *
-from pymongo.errors import PyMongoError
+from pymongo.errors import OperationFailure
 
 
 def create_service(collection):
@@ -48,7 +48,7 @@ def create_service(collection):
 
         try:
             new_document_id = collection.insert_one(document)
-        except PyMongoError:
+        except OperationFailure:
             print('the insert operation failed')
         else:
             print('insertion done successfully')
