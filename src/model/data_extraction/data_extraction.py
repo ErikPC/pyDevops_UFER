@@ -9,7 +9,7 @@ def load_data(collection):
         for item in collection.find({}, {'_id': False}):
             if validate_schema(item):
                 documents.append(item)
-    except PyMongoError:
+    except OperationFailure:
         print("load_data operation failed")
     else:
         return documents
