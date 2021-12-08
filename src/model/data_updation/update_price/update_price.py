@@ -22,6 +22,7 @@ def update_price(collection):
     current_price = get_price(collection, service)
     print('current price:', current_price)
 
+    # get new price
     while True:
 
         try:
