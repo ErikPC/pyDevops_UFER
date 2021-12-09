@@ -1,5 +1,5 @@
 import pytest
-from src.model.service_selection.select_service import select_service
+from src.model.service_selection.select_service.select_service import select_service
 
 services = ['Ufer Lite', 'Ufer Gold', 'Ufer Life', 'Ufer Bus']
 
