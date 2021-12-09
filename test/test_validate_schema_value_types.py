@@ -34,7 +34,7 @@ ufer_schema_valid = {
 }
 
 
-@pytest.mark.validate_value_types
+@pytest.mark.test_validate_value_types
 def test_validate_value_types():
     assert validate_value_types(ufer_schema_valid) == True
     assert validate_value_types(ufer_schema_invalid_types) == False
