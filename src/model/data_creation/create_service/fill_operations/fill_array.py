@@ -9,3 +9,4 @@ def fill_array():
         else:
             array.append(user_input)
     return array
+
