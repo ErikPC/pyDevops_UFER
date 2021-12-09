@@ -1,5 +1,5 @@
 from src.repository.db_connection.connect_db import connect_db
-from src.repository.get_collection.get_collection import *
+from src.controller.controller import controller
 
 # represents the current documents in the db as dicts in a list
 documents = list()
@@ -15,3 +15,4 @@ UFER = database.ufer
 REVIEWS = database.reviews
 
 # here the user specify the operation to perform
+controller(UFER)
