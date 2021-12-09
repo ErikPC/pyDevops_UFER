@@ -7,4 +7,3 @@ def fill_int(key_name):
         except ValueError:
             print('Invalid Input. %s must be an int' % key_name)
     return value
-

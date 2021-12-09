@@ -8,7 +8,6 @@ from pymongo.errors import OperationFailure
 
 
 def create_service(collection):
-
     # generate empty_values document
     document = {
         "name": "",

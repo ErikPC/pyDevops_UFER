@@ -8,5 +8,3 @@ def fill_string(key_name):
             print('Invalid Input. price must be a string.')
     return value
 
-
-
