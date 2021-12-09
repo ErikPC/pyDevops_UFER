@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on My New Hugo Site</title>
+    <link>http://example.org/</link>
+    <description>Recent content in Home on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Dec 2021 23:44:21 +0100</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Erik</title>
+      <link>http://example.org/erik/</link>
+      <pubDate>Thu, 02 Dec 2021 15:44:17 +0100</pubDate>
+      
+      <guid>http://example.org/erik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>review</title>
+      <link>http://example.org/review/</link>
+      <pubDate>Wed, 01 Dec 2021 23:45:10 +0100</pubDate>
+      
+      <guid>http://example.org/review/</guid>
+      <description>some content about making a review of a service
+We are inserting html inside markdown and rendering it</description>
+    </item>
+    
+    <item>
+      <title>Ufer Bus</title>
+      <link>http://example.org/services/ufer-bus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-bus/</guid>
+      <description>Ufer Bus offers a private transportation service for a multitude of living beings, this service offers a UFO with space for a comfortable and appetizing trip, you can enjoy a comfortable, fast, and pleasant service surrounded by your friends or family.
+driver: Alien Chofer
+passengers: 24
+privacy: Private
+seats: Comfortable seats
+propulsion: Electric
+top speed: 800
+price: 200$
+amenities: WiFi, Water, Snacks, Beer, TV</description>
+    </item>
+    
+    <item>
+      <title>Ufer Business</title>
+      <link>http://example.org/services/ufer-business/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-business/</guid>
+      <description>Ufer Business is the current best UFO service in terms of quality, it is a top-of-the-range service, this service has all the extra qualities and comforts that a living being could need.
+driver: Alien Chofer
+passengers: 4
+privacy: Private
+seats: Extra comfortable seats
+propulsion: Fusion reactor
+top speed: 150.000
+price: 80$
+amenities: WiFi, Wine, HiFi Audio System, Mask</description>
+    </item>
+    
+    <item>
+      <title>Ufer Daily</title>
+      <link>http://example.org/services/ufer-daily/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-daily/</guid>
+      <description>Ufer Gold offers the most luxury experience in the entire galaxy. Includes all the features and amenities you can imagine.
+driver: Alienormal
+passengers: 4
+privacy: Membership
+seats: Common seats
+propulsion: Electric
+top speed: 10000
+price: 30$
+amenities: WiFi, Mask</description>
+    </item>
+    
+    <item>
+      <title>Ufer Daily&#43;</title>
+      <link>http://example.org/services/ufer-daily&#43;/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-daily&#43;/</guid>
+      <description>Ufer Daily+ offers a low-cost service for daily transport situations, you will share space with other living beings in exchange for an economic cost, unlike Ufer Daily, this Ufer Daily+ service offers an extra quality in the transport service.
+driver: Alienormal
+passengers: 6
+privacy: Private
+seats: Comfortable seats
+propulsion: Hybrid
+top speed: 1200
+price: 40$
+amenities: WiFi, Water, Mask, Snack</description>
+    </item>
+    
+    <item>
+      <title>Ufer Gold</title>
+      <link>http://example.org/services/ufer-gold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-gold/</guid>
+      <description>Ufer Gold offers the most luxury experience in the entire galaxy. Includes all the features and amenities you can imagine.
+driver: Autopilot
+passengers: 1
+privacy: Private
+seats: King Size
+propulsion: Photon Engine
+top speed: 1080000000
+price: 120$
+amenities: WiFi, Bluetooth, Tinted Screens, HiFi Audio System, A/C, Champagne Bottle, Water, Snacks</description>
+    </item>
+    
+    <item>
+      <title>Ufer Life</title>
+      <link>http://example.org/services/ufer-life/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-life/</guid>
+      <description>Ufer Life offers a low cost service for transport situations in the city, you will share space with other living beings in exchange for a cost, the service runs through a line of stops, instead of going to the different destinations of each client.
+driver: Alienormal
+passengers: 10
+privacy: Public
+seats: Economic seats
+propulsion: Thermal
+top speed: 600
+price: 15$
+amenities: Mask</description>
+    </item>
+    
+    <item>
+      <title>Ufer Lite</title>
+      <link>http://example.org/services/ufer-lite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-lite/</guid>
+      <description>Ufer lite offers an affordable transportation service for everyone at any time and in any situation.
+driver: Alienormal
+passengers: 2
+privacy: Public
+seats: Common seats
+propulsion: Thermal
+top speed: 10000
+price: 40$
+amenities: WiFi</description>
+    </item>
+    
+    <item>
+      <title>Ufer Omega</title>
+      <link>http://example.org/services/ufer-omega/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-omega/</guid>
+      <description>Ufer omega offers an affordable transportation service for everyone at any time and in any situation.
+driver: Alienormal
+passengers: 2
+privacy: Public
+seats: Common seats
+propulsion: Thermal
+top speed: 10000
+price: 40$
+amenities: WiFi</description>
+    </item>
+    
+    <item>
+      <title>Ufer Space</title>
+      <link>http://example.org/services/ufer-space/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/ufer-space/</guid>
+      <description>Ufer Space is the transport service for situations that require extra space, useful for transporting belongings or for families.
+driver: Alien Chofer
+passengers: 8
+privacy: Private
+seats: Comfortable seats
+propulsion: Electric
+top speed: 600
+price: 50$
+amenities: WiFi, Water</description>
+    </item>
+    
+  </channel>
+</rss>
