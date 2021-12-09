@@ -1,9 +1,13 @@
+* {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
 body {
-  background-color: rgb(214, 209, 209);
+  background-color: rgb(217, 243, 211);
+  background-image: url(https://cadenaser00.epimg.net/ser/imagenes/2021/04/08/ciencia/1617866705_638557_1617869065_noticia_normal.jpg);
 }
 
 nav {
-  background-color: #333;
+  background-color: rgb(189, 231, 220);
   overflow: hidden;
   width: 100%;
 }
@@ -12,7 +16,7 @@ nav {
 nav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #000000;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -35,29 +39,30 @@ nav a.active {
 nav .icon {
   display: none;
 }
-
 h1 {
+  text-align: center;
   padding-left: 0.5%;
-  background-color: rgb(248, 139, 119);
+  background-color: rgb(189, 231, 220);
 }
-
-<<<<<<< HEAD
-.content {
-  color: rebeccapurple;
-}
-=======
-  .content {
-     color: red;
+.alinear-derecha{
+  float: right;
+  margin-right: 1%;
   }
->>>>>>> 12118c3e056879ab54aac6280a8e1107e5ec087b
+.content {
+  background-color:rgb(231, 208, 235) ;
+  margin-left: 10%;
+  padding: 1%;
+  width: 20%;
+  color: rgb(0, 0, 0);
+}
 
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: rgb(189, 231, 220);
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 
@@ -69,13 +74,9 @@ footer p {
   color: #04aa6d;
 }
 
-<<<<<<< HEAD
 @media only screen and (min-width: 768px) {
   nav {
     flex-direction: row;
-=======
-    color: green;
->>>>>>> 12118c3e056879ab54aac6280a8e1107e5ec087b
   }
   .service-container {
     display: flex;
@@ -87,6 +88,14 @@ footer p {
     flex: 1;
   }
 }
-.list_service {
-  background-color: rgb(206, 241, 197);
+ul {
+  background-color: rgb(189, 231, 220);
+  margin-right: 50%;
+}
+li {
+  border-bottom: 3px solid black;
+}
+.service{
+  background-color:rgb(231, 208, 235) ;
+  padding: 1%;
 }
