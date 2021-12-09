@@ -7,4 +7,3 @@ def select_service(services):
             print("the service selected doesn't exists")
     print('the selected service is', service)
     return service
-

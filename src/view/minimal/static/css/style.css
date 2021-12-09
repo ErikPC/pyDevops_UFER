@@ -41,9 +41,15 @@ h1 {
   background-color: rgb(248, 139, 119);
 }
 
+<<<<<<< HEAD
 .content {
   color: rebeccapurple;
 }
+=======
+  .content {
+     color: red;
+  }
+>>>>>>> 12118c3e056879ab54aac6280a8e1107e5ec087b
 
 footer {
   position: fixed;
@@ -63,9 +69,13 @@ footer p {
   color: #04aa6d;
 }
 
+<<<<<<< HEAD
 @media only screen and (min-width: 768px) {
   nav {
     flex-direction: row;
+=======
+    color: green;
+>>>>>>> 12118c3e056879ab54aac6280a8e1107e5ec087b
   }
   .service-container {
     display: flex;
