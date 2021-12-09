@@ -12,6 +12,7 @@ def controller(collection):
             print("No es una entrada valida")
         if selection == 1:
             create_service(collection)
+            load_data(collection)
         if selection == 2:
             delete_data(collection)
         if selection == 3:
