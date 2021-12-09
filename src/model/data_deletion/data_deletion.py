@@ -4,7 +4,7 @@ from pymongo.errors import OperationFailure
 
 def delete_data(collection):
     # get all services
-    servicios = get_values(collection, 'name')
+    servicios = get_values(collection,'name')
 
     # print all services
     print('servicios disponibles:', servicios)
