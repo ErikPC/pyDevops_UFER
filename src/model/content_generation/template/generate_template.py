@@ -6,6 +6,7 @@ def generate_template(ufer_docs, index):
         '---\n',
         'title: ' + '"' + ufer_docs[index]['name'] + '"\n',
         'draft: false\n',
+        'amenities: ' + str(ufer_docs[index]['amenities']) +"\n\n",
         '---\n',
         ufer_docs[index]['description'] + '\n\n',
         'driver: ' + ufer_docs[index]['driver'] + '\n\n',
