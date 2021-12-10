@@ -50,9 +50,8 @@ h1 {
   }
 .content {
   background-color:rgb(231, 208, 235) ;
-  margin-left: 10%;
+  text-align: center;
   padding: 1%;
-  width: 20%;
   color: rgb(0, 0, 0);
 }
 
