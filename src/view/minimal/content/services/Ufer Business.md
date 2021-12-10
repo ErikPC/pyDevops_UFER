@@ -18,7 +18,7 @@ propulsion: Fusion reactor
 
 top speed: 150
 
-price: 80$
+price: 90$
 
 amenities: WiFi, Wine, HiFi Audio System, Mask
 
