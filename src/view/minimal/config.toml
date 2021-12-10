@@ -4,3 +4,5 @@ title = 'My New Hugo Site'
 [markup]
   [markup.goldmark.renderer]
     unsafe=true
+[taxonomies]
+  amenity = 'amenities'

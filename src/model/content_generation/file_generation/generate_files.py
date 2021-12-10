@@ -17,13 +17,9 @@ def generate_files(collection):
 
             template = generate_template(ufer_docs, index)
 
-            my_file = open(destiny + doc['name'] + file_type, 'w', encoding='UTF-8')
-            counter += 1
-
-            try:
+            with open(destiny + doc['name'] + file_type, 'w', encoding='UTF-8') as my_file:
+                counter += 1
                 my_file.writelines(template)
-            finally:
-                my_file.close()
 
     # items added
     if counter == 0:

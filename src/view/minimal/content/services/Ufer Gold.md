@@ -1,6 +1,8 @@
 ---
 title: "Ufer Gold"
 draft: false
+amenities: ['WiFi', 'Bluetooth', 'Tinted Screens', 'HiFi Audio System', 'A/C', 'Champagne Bottle', 'Water', 'Snacks']
+
 ---
 Ufer Gold offers the most luxury experience in the entire galaxy. Includes all the features and amenities you can imagine.
 

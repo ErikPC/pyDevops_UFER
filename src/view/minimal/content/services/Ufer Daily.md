@@ -1,6 +1,8 @@
 ---
 title: "Ufer Daily"
 draft: false
+amenities: ['WiFi', 'Mask']
+
 ---
 Ufer Gold offers the most luxury experience in the entire galaxy. Includes all the features and amenities you can imagine.
 
