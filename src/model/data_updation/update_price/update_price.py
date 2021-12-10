@@ -43,7 +43,11 @@ def update_price(collection):
         collection.update_one(query, new_price)
     except OperationFailure:
         print("Operation error, price not updated successfully")
-        return False
+        return None
     else:
         print("price updated successfully!")
-        return True
+        return {
+            'name': service,
+            'current_price': current_price,
+            'new_price': input_value
+        }
