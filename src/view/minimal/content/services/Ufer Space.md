@@ -1,6 +1,8 @@
 ---
 title: "Ufer Space"
 draft: false
+amenities: ['WiFi', 'Water']
+
 ---
 Ufer Space is the transport service for situations that require extra space, useful for transporting belongings or for families.
 

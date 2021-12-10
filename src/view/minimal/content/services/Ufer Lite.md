@@ -1,6 +1,8 @@
 ---
 title: "Ufer Lite"
 draft: false
+amenities: ['WiFi']
+
 ---
 Ufer lite offers an affordable transportation service for everyone at any time and in any situation.
 
