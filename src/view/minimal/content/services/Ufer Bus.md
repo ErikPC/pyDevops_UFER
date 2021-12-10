@@ -16,7 +16,7 @@ propulsion: Electric
 
 top speed: 800
 
-price: 30$
+price: 35$
 
 amenities: WiFi, Water, Snacks, Beer, TV
 

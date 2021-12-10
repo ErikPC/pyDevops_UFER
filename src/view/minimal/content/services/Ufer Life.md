@@ -16,7 +16,7 @@ propulsion: Thermal
 
 top speed: 600
 
-price: 15$
+price: 13$
 
 amenities: Mask
 
