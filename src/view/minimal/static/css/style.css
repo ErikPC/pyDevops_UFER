@@ -73,7 +73,7 @@ footer p {
   color: #04aa6d;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1110px) {
   nav {
     flex-direction: row;
   }
