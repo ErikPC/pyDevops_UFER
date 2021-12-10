@@ -14,7 +14,7 @@ seats: Extra comfortable seats
 
 propulsion: Fusion reactor
 
-top speed: 150.000
+top speed: 150
 
 price: 80$
 

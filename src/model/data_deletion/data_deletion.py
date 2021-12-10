@@ -24,7 +24,8 @@ def delete_data(collection):
             print("La operación ha fallado")
         else:
             print("Servicio eliminado correctamente")
-            return True
+            return servicio_eliminar
 
     else:
         print("item no encontrado")
+        return None

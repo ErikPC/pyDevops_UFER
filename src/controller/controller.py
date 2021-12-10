@@ -6,25 +6,39 @@ from src.model.content_deletion.delete_service import delete_service
 
 
 def controller(collection):
+
     salir = False
     menu = ['1', '2', '3', '4', '5', '9']
+
     while not salir:
         selection = input(
             "Tiene las siguientes opciones:\n 1-Crear un servicio\n 2-Eliminar un servicio de la pagina\n "
-            "3-Visualizar un "
-            "servicio\n 4-Cambiar un precio\n 5-Eliminar servicio de atlas\n 9-Exit\n").strip()
+            "3-Generar contenido en la página "
+            "\n 4-Cambiar un precio\n 9-Exit\n").strip()
+
+        # invalid input
         if selection not in menu:
             print("No es una entrada valida")
+
+        # create a service
         if selection == '1':
             create_service(collection)
             generate_files(collection)
+
+        # delete a service
         if selection == '2':
-            delete_service()
+            servicio_a_eliminar = delete_data(collection)
+            if servicio_a_eliminar is not None:
+                delete_service(servicio_a_eliminar)
+
+        # generate content
         if selection == '3':
             generate_files(collection)
+
+        # update price of an existing service
         if selection == '4':
             update_price(collection)
-        if selection == '5':
-            delete_data(collection)
-        if selection == '6':
+
+        # exit
+        if selection == '9':
             salir = True
