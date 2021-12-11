@@ -36,13 +36,13 @@ En este modulo tenemos un modulo para verificar los datos y uno que usaremos par
 - service_selection
 - data_validation
 
-Los modulos,que dependen de repository ya que la conexion con la base de datos es necesaria, realizaran el CRUD son:
+Los modulos,que dependen de repository ya que la conexion con la BBDD es necesaria, realizaran el CRUD son:
 - data_extraction: para leer los datos, aparte contiene la funcionalidad de pasar los datos para ser visualizados en el Static site gen.
-- data_creation: este modulo pide al usuario los datos para crear un documento en la base de datos 
+- data_creation: este modulo pide al usuario los datos para crear un documento en la BBDD 
 - data_deletion: es el encargado de eliminar los datos del usuario.
 - data_updation: se encarga de actualizar los datos de la BBDD
 
-En el repositorio tenemos los modulos encargados de usar los datos de la base de datos en Hugo:
+Aparte encontramos los modulos encargados de usar los datos de la BBDD en Hugo:
 - contente_generation: depende de los datos extraidos, se encargara generar los archivos que se visualizaran en Hugo. 
 - content_deletion: se encarga de cuando se eliminen los datos , actualice la pagina y se desaparezca la pagina dedicada a ese item
 - content_updation: es la que cuando se cambien los datos de un item los actualizara en el archivo de Hugo.
