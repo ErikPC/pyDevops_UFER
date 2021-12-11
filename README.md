@@ -18,14 +18,15 @@ La aplicación ha sido desarrollada con el lenguaje de programacion python versi
 
 ### Diagrama de componentes
 
-Nuestro programa principal de compone de tres elementos esenciales:
+Nuestro programa principal de compone de tres elementos esenciales y un cuarto que es el dedicado a  la Static site gen:
 - repository
 - model
 - controller
+- view
 
 #### repository
 
-Aqui encontramos la conexion con la BBDD 
+Aqui tenemos el modulo db_conection, es el que se encarga de establecer la conexion con la base de datos.
 
 #### model
 
@@ -48,7 +49,11 @@ En el repositorio tenemos los modulos encargados de usar los datos de la base de
 
 ### view 
 
-El repositorio view, contiene todo lo necesario para iniciar Hugo con su configuracion correspondiente. Por este motivo View depende de todos los modulos content, ya que son los que hacen que 
+El repositorio view, contiene todo lo necesario para iniciar Hugo con su configuracion correspondiente. Por este motivo View depende de todos los modulos content, ya que son los que hacen que se actualice y genere la informacion de la página.
+
+### controller 
+
+El controller es totalmente dependiente de model, ya que es el encargado de crear un menu para controlar las funcionalidades que hay en model.
 
 ![diagrama](readme_pictures\diagrama_componentes_pydevops.png)
 
