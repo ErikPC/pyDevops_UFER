@@ -38,7 +38,3 @@ def create_service(collection):
     document['price'] = fill_int('price')
     document["amenities"] = fill_array()
 
-    # schema validation
-    if validate_schema(document):
-        new_document_id = collection.insert_one(document)
-        return new_document_id

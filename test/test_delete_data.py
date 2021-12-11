@@ -11,9 +11,10 @@ collection.insert_one(
         'nombre': 'Joan',
         'edad': 20,
         'deportes': ['padel', 'futbol', 'boxeo'],
-        "services":"uber"
+        "services": "uber"
     }
 )
+
 
 @pytest.mark.test_delete_data
 def test_delete_data():
