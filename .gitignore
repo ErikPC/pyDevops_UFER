@@ -6,3 +6,5 @@ pyvenv.cfg
 .pylintrc
 .idea/
 .src\services\validate_schema\ValidateSchemaComentado.py
+htmlcov
+.coverage
