@@ -18,7 +18,7 @@ propulsion: Thermal
 
 top speed: 10000
 
-price: 40$
+price: 50$
 
 amenities: WiFi
 
