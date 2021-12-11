@@ -24,11 +24,11 @@ Nuestro programa principal de compone de tres elementos esenciales y un cuarto q
 - controller
 - view
 
-#### repository
+### repository
 
 Aqui tenemos el modulo db_conection, es el que se encarga de establecer la conexion con la base de datos.
 
-#### model
+### model
 
 Se centra en el CRUD "Crear, Leer, Actualizar y Borrar" de la BBDD. Por eso lo vinculamos con reposiroty. Tambien almacenando otras utilidade que le ayuda a realizar dichas actividades. 
 
