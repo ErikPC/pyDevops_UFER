@@ -8,3 +8,4 @@ pyvenv.cfg
 .src\services\validate_schema\ValidateSchemaComentado.py
 htmlcov
 .coverage
+GuiaDefensa.md
