@@ -1,3 +1,7 @@
-def enseñar_items(collection):
+
+def load_data(collection):
+    documents = []
     for item in collection.find({}, {'_id': False}):
-        print(item)
+        documents.append(item)
+    return documents
+
