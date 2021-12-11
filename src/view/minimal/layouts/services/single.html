@@ -5,7 +5,7 @@
         <h2>Services</h2>
 
         <!-- display the list of all projects  -->
-        <ul>
+        <ul class="list_in_service">
             {{ range (where .Site.RegularPages "Type" "in" "services") }}
             <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
             {{ end }}
