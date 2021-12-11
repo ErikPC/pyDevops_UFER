@@ -55,5 +55,5 @@ El repositorio view, contiene todo lo necesario para iniciar Hugo con su configu
 
 El controller es totalmente dependiente de model, ya que es el encargado de crear un menu para controlar las funcionalidades que hay en model.
 
-![diagrama](readme_pictures\diagrama_componentes_pydevops.png)
+<img src="./readme_pictures/diagrama_componentes_pydevops.png">
 
