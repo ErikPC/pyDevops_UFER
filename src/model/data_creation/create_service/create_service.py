@@ -41,16 +41,3 @@ def create_service(collection):
             document[PYDEVOPS_KEYS[index]] = fill_int(PYDEVOPS_KEYS[index])
         elif PYDEVOPS_VALUE_TYPES[index] == list:
             document[PYDEVOPS_KEYS[index]] = fill_array()
-
-    # schema validation
-    if validate_schema(document):
-
-        try:
-            new_document_id = collection.insert_one(document)
-        except OperationFailure:
-            print('the insert operation failed')
-        else:
-            print('insertion done successfully')
-            return new_document_id
-    else:
-        return False
