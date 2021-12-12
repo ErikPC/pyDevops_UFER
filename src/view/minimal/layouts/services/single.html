@@ -1,0 +1,23 @@
+
+{{ define "main" }}
+<div class="service-container">
+    <section class="service-list">
+        <h2>Services</h2>
+
+        <!-- display the list of all projects  -->
+        <ul class="list_in_service">
+            {{ range (where .Site.RegularPages "Type" "in" "services") }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
+            {{ end }}
+        </ul>
+    </section>
+
+<section class="service">
+    <h2>{{ .Title }}</h2>
+
+    {{ .Content }}
+</section>
+</div>
+
+{{ end }}
+
