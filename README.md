@@ -25,18 +25,18 @@ Principalmente, la aplicación gira entorno a una base de datos (BBDD), Mongodb.
 Los datos plasmados estaban escritos en un Static site generator, el que nos indicaron usar era Hugo. Hugo es uno de los generadores de sitios estáticos de código abierto más populares. Con su asombrosa velocidad y flexibilidad.
 
 La aplicación ha sido desarrollada con el lenguaje de programacion python version 3.9 . Para crear el programa se han tenido que instalar las siguientes dependencias:
+
 - Para realizar los test sobre los módulos del programa hemos usado pytest version 6.2.5.
 - La conexión con la base de datos tuvimos que instalar la librería de pymongo version 3.12.1.
 - Para la conexión a la BBDD con pymongo tuvimos que añadir certifi para la conexión SSL.
 - La validación de los schema se ha instalado el módulo jsonchema.
 
-
-
 ## Diagrama de componentes
 
 <img src="./readme_pictures/diagrama_componentes_pydevops.png">
 
-Nuestro programa principal de compone de tres elementos esenciales y un cuarto que es el dedicado a  la Static site gen:
+Nuestro programa principal de compone de tres elementos esenciales y un cuarto que es el dedicado a la Static site gen:
+
 - repository
 - model
 - controller
@@ -48,29 +48,36 @@ Aquí tenemos el módulo db_conection, es el que se encarga de establecer la con
 
 ### model
 
-Se centra en el CRUD "Crear, Leer, Actualizar y Borrar" de la BBDD. Por eso lo vinculamos con reposiroty. También almacenando otras utilidades que le ayuda a realizar dichas actividades. 
+Se centra en el CRUD "Crear, Leer, Actualizar y Borrar" de la BBDD. Por eso lo vinculamos con reposiroty. También almacenando otras utilidades que le ayuda a realizar dichas actividades.
 
 En este módulo tenemos un módulo para verificar los datos y uno que usaremos para seleccionar los los servicios.
+
 - service_selection
 - data_validation
 
 Los módulos,que dependen de repository ya que la conexión con la BBDD es necesaria, realizarán el CRUD son:
+
 - data_extraction: para leer los datos, aparte contiene la funcionalidad de pasar los datos para ser visualizados en el Static site gen.
-- data_creation: este módulo pide al usuario los datos para crear un documento en la BBDD 
+- data_creation: este módulo pide al usuario los datos para crear un documento en la BBDD
 - data_deletion: es el encargado de eliminar los datos del usuario.
 - data_updation: se encarga de actualizar los datos de la BBDD
 
 Aparte encontramos los módulos encargados de usar los datos de la BBDD en Hugo:
-- contente_generation: depende de los datos extraidos, se encargará generar los archivos que se visualizarán en Hugo. 
+
+- contente_generation: depende de los datos extraidos, se encargará generar los archivos que se visualizarán en Hugo.
 - content_deletion: se encarga de cuando se eliminen los datos , actualice la página y se desaparezca la página dedicada a ese item
 - content_updation: es la encargada de cuando se cambien los datos de un item los actualizará en el archivo de Hugo.
 
-### view 
+### view
 
 El repositorio view, contiene todo lo necesario para iniciar Hugo con su configuración correspondiente. Por este motivo View depende de todos los módulos content, ya que son los que hacen que se actualice y genere la información de la página.
 
-### controller 
+### controller
 
 El controller es totalmente dependiente de model, ya que es el encargado de crear un menu para controlar las funcionalidades que hay en model.
 
+## Clockify
 
+A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivos modulos.
+
+<img src="./readme_pictures/clockify.PNG">
