@@ -78,6 +78,6 @@ El controller es totalmente dependiente de model, ya que es el encargado de crea
 
 ## Clockify
 
-A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivos modulos.
+A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivas asignaturas.
 
 <img src="./readme_pictures/clockify.PNG">
