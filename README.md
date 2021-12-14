@@ -81,3 +81,38 @@ El controller es totalmente dependiente de model, ya que es el encargado de crea
 A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivas asignaturas.
 
 <img src="./readme_pictures/clockify.PNG">
+
+## Frontend
+
+La página web se encuentra el la carpeta src/view/minimal donde se aprecia la estructura de directorios de Hugo.
+
+En nuestro caso, creamos el tema desde cero y todavía necesita ser mejorado.
+
+Hicimos cambios en el config.toml para poder renderizar html dentro de los archivos markdown dentro del directorio content, además de especificar las amenities como taxonomies.
+
+Respecto al esqueleto de la página, en el directorio layouts encontramos _default, partials, services y el archivo index.html
+
+El archivo index.html hace referencia a partials/pagecontent.html donde se muestra el contenido de la página y el título usando variables (.Cotent y .Title) de Hugo entre {{}}.
+
+En _default se definen los esqueletos de las páginas de tipo single y de tipo list además de la base de todos los html de las páginas de la web.
+
+En baseof.html se definen el head, el nav, el body, el main y el footer. Donde se usan variables de Hugo para definir un title diferente en cada página. También se define el main y el footer recibe el año en que nos encontramos (particularidad de Hugo para determinar el año en que nos encontramos)
+
+En single.html se define la base del html en cada página de contenido que no sea de servicios de ufos. 
+Simplemente se visualiza el contenido de la página de los archivos markdown.
+
+En list.html se renderiza el html para las páginas que listan los servicios ofrecidos en la web, donde se aprovecha la lógica de Hugo para hacer un bucle sobre todos los títulos de los contenidos para mostrar los servicios en un menú vertical.
+
+En services/single.html se enseña una lista con todos los servicios al igual que en list.html, además de enseñar el contenido de los ficheros markdown situados en la carpeta content/services
+
+En la página de amenities, 
+
+Finalmente tenemos la carpeta content, donde encontramos el contenido de la web.
+
+_index.md hace referencia al contenido de la página index que nos aparece la primera al lanzar Hugo.
+
+En review.md la idea era hacer un formulario para enviar datos a la base de datos para valorar los servicios, por lo tanto todavía está en proceso.
+
+Y en services encontramos todos los servicios de ufos que se ofrecen en la página en forma de ficheros markdown.
+
+
