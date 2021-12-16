@@ -1,5 +1,53 @@
 # pyDevops_UFER
+---
+# Introducción
+Tu tutor de empresa quiere aprovechar que has llegado para intentar implementar un sistema de integración y entrega contínua (CI /CD), así que se sienta contigo a hacer una documentación técnica (es decir, unos garabatos en el papel donde venían las panades de carn amb pèsols del berenar) según se le va ocurriendo la solución (ver figura). El diagrama viene a decir algo así:
+- Te propone que desarrolles una aplicación Python para extraer los datos de MongoAtlas. Se hace necesario diseñar una especificación del esquema de los documentos JSON.
+- Esos documentos JSON tendrás que transformarlos, también con una aplicación Python, en ficheros Markdown.
+- Luego, has de situar estos ficheros en una estructura de directorios que establece el generador de sitios estáticos llamado “Hugo”, también mediante una aplicación Python que construyas.
+- Hugo, al arrancar, leerá los ficheros Markdown y los transformará en documentos HTML para servirlos en la “nueva web”.Tu tutor no ha usado nunca Hugo ni ningún otro generador de sitios estáticos, pero quieren que alguien aprenda a usarlo para evaluar su implantación en la intranet de la empresa. 
+- Tendrás que customizar los estilos CSS que utiliza Hugo para darle la presentación adecuada.
 
+# Metodologia
+
+La metodologia usada para este proyecto fue la metodolgía kanban.
+
+Esta metodología es muy sencilla, se puede actualizar y los equipos de trabajo la pueden asumir sin problema. Al ser un método visual permite que con un simple vistazo se conozca el estado de los proyectos y se puedan asignar nuevas tareas de manera muy efectiva. Para aplicarlo, es necesario un tablero de tareas con el que poder mejorar el trabajo y tener un ritmo sostenible.
+
+# Analisis
+
+## Posibles tecnologias
+
+La principal funcionalidad es generar archivos Markdown con los datos almacenados en la base de datos MongoAtlas en el Static site generator Hugo. A continuación se especifícan las tecnologías utilizadas.
+
+Principalmente, la aplicación gira entorno a una base de datos (BBDD), Mongodb. Mongodb es un sistema de BBDD NoSQL, orientado a documentos y de código abierto. En lugar de guardar los datos en tablas, tal y como se hace en las bases de datos relacionales, MongoDB guarda estructuras de datos BSON. Para ser más específico, se han realizado las consultas en MongoAtlas, un servicio en la nube de Mongodb.
+
+Los datos plasmados estaban escritos en un Static site generator, el que nos indicaron usar era Hugo. Hugo es uno de los generadores de sitios estáticos de código abierto más populares. Con su asombrosa velocidad y flexibilidad.
+
+El editor de codigo que podiamos elegir fueron VsCode, pycharm o sublimetext, aunque teniamos más opciones estas fueron las pensadas.
+
+La aplicación ha sido desarrollada con el lenguaje de programacion python version 3.9 . Para crear el programa se han tenido que instalar las siguientes dependencias:
+
+- Para realizar los test sobre los módulos del programa hemos usado pytest version 6.2.5.
+- La conexión con la base de datos tuvimos que instalar la librería de pymongo version 3.12.1.
+- Para la conexión a la BBDD con pymongo tuvimos que añadir certifi para la conexión SSL.
+- La validación de los schema se ha instalado el módulo jsonchema.
+
+## tabla de tecnologias
+
+https://www.tablesgenerator.com/markdown_tables
+
+# Diseño 
+
+## Diagrama de componentes
+
+## Esquema de BBDD
+
+## Futuras Pruebas
+
+Las pruebas seleccionadas principalmente son sobre el CRUD de la aplicacion.
+
+Se probara como se elimina un item de la base de datos, como se actualizara un dato en la base y como 
 ## Arquitectura y tecnologias usadas
 
 ### Arquitectura de la app
