@@ -356,7 +356,7 @@ def update_price(collection):
             'new_price': input_value
         }
 ```
-Se usan dos módulos. Uno para obtener el precio actual del item en la BBDD y otro para seleccionar el nuevo precio y actualizarlo en la BBDD.
+Se usan dos módulos. Uno para obtener el precio actual del item en la BBDD y otro para seleccionar el nuevo precio y actualizarlo.
 
 - data_deletion (D):
 
@@ -389,7 +389,7 @@ def delete_data(collection):
         print("item no encontrado")
         return None
 ```
-En este módulo se pide el servicio a eliminar y se borra de la BBDD.
+En este módulo se pide el item a eliminar y su confirmación. Si este no completa la confirmación, no se elimina de la base de datos.
 
 - validación del schema:
 
@@ -418,6 +418,42 @@ def validate_keys(schema_to_validate):
 
     return is_valid
 ```
+En este módulo se chequea que las claves sean las esperadas y que no se deje a ninguna de ellas.
+
+``` python
+from jsonschema import validate
+from jsonschema.exceptions import ValidationError
+
+correct_schema = {
+
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "driver": {"type": "string"},
+        "passengers": {"type": "number"},
+        "privacy": {"type": "string"},
+        "seats": {"type": "string"},
+        "propulsion": {"type": "string"},
+        "top_speed": {"type": "number"},
+        "price": {"type": "number"},
+        "amenities": {"type": "array"}
+    }
+}
+
+
+def validate_value_types(schema_to_validate):
+    print("validating schema value types...")
+    try:
+        validate(instance=schema_to_validate, schema=correct_schema)
+
+    except ValidationError:
+        print("invalid value type")
+    else:
+        return True
+    return False
+```
+En este otro, se comprueba que los valores sean del tipo correcto. Como podemos apreciar, se ha hecho uso de la librería jsonschema.
 ## Arquitectura y tecnologias usadas
 
 ### Arquitectura de la app
@@ -465,7 +501,7 @@ En list.html se renderiza el html para las páginas que listan los servicios ofr
 
 En services/single.html se enseña una lista con todos los servicios al igual que en list.html, además de enseñar el contenido de los ficheros markdown situados en la carpeta content/services
 
-En la página de amenities, 
+En la página de amenities, se generan las categorias de los items que se añaden.
 
 Finalmente tenemos la carpeta content, donde encontramos el contenido de la web.
 
