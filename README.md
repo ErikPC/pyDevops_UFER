@@ -257,9 +257,167 @@ def create_service(collection):
             document[PYDEVOPS_KEYS[index]] = fill_int(PYDEVOPS_KEYS[index])
         elif PYDEVOPS_VALUE_TYPES[index] == list:
             document[PYDEVOPS_KEYS[index]] = fill_array()
-```
-Se recorren las variables globales que almacenan las claves y los valores del schema y en función del tipo de dato se usan diferentes operaciones para llenar los valores del documento a enviar a la BBDD.
+    
+     # schema validation
+    if validate_schema(document):
 
+        try:
+            new_document_id = collection.insert_one(document)
+        except OperationFailure:
+            print('the insert operation failed')
+        else:
+            print('insertion done successfully')
+            return new_document_id
+    else:
+        return False
+```
+Se recorren las variables globales que almacenan las claves y los valores del schema y en función del tipo de dato se usan diferentes operaciones para llenar los valores del documento a enviar a la BBDD. Después se valida el schema y se inserta el documento llenado a la colección.
+
+- data_extraction (R):
+
+``` python
+def load_data(collection):
+    documents = []
+
+    try:
+        for item in collection.find({}, {'_id': False}):
+            if validate_schema(item):
+                documents.append(item)
+    except OperationFailure:
+        print("load_data operation failed")
+    else:
+        return documents
+
+```
+En este módulo se extraen los documentos de la colección y se almacenan en una lista de diccionarios para poder ser tratados posteriormente y generar su contenido en la página si todavía no se encuentran en ella.
+
+- data_updation (U):
+
+``` python
+def get_price(collection, service):
+
+    service_price = 0
+
+    try:
+        for doc in collection.find({}, {'_id': False}):
+            if doc['name'] == service:
+                service_price = doc['price']
+
+    except OperationFailure:
+        print("get_price operation failed")
+    else:
+        return service_price
+
+def update_price(collection):
+
+    # get all services
+    services = get_values(collection, 'name')
+
+    # print all services
+    print('servicios disponibles:', services)
+
+    # select service
+    service = select_service(services)
+
+    # where to do the operation
+    query = {"name": service}
+
+    # show current price
+    current_price = get_price(collection, service)
+    print('current price:', current_price)
+
+    # get new price
+    while True:
+
+        try:
+            input_value = int(input("select the new price: "))
+            if input_value != current_price and input_value > 0:
+                break
+            else:
+                print('Price must be diferent from the current one and greater than 0!')
+
+        except ValueError:
+            print('Invalid Input. price must be an int.')
+
+    # what to update
+    new_price = {"$set": {"price": input_value}}
+
+    # update operation
+    try:
+        collection.update_one(query, new_price)
+    except OperationFailure:
+        print("Operation error, price not updated successfully")
+        return None
+    else:
+        print("price updated successfully!")
+        return {
+            'name': service,
+            'current_price': current_price,
+            'new_price': input_value
+        }
+```
+Se usan dos módulos. Uno para obtener el precio actual del item en la BBDD y otro para seleccionar el nuevo precio y actualizarlo en la BBDD.
+
+- data_deletion (D):
+
+``` python
+def delete_data(collection):
+    # get all services
+    servicios = get_values(collection,'name')
+
+    # print all services
+    print('servicios disponibles:', servicios)
+
+    # delete document from the database
+    servicio_eliminar = input("Escribe el servicio que quieres eliminar: \n").strip().title()
+    confirm = input("Vuelve a escribir el servicio: \n").strip().title()
+
+    if servicio_eliminar != confirm:
+        print("Los servicios no coinciden")
+
+    elif servicio_eliminar in servicios:
+
+        try:
+            collection.delete_one({"name": servicio_eliminar})
+        except OperationFailure:
+            print("La operación ha fallado")
+        else:
+            print("Servicio eliminado correctamente")
+            return servicio_eliminar
+
+    else:
+        print("item no encontrado")
+        return None
+```
+En este módulo se pide el servicio a eliminar y se borra de la BBDD.
+
+- validación del schema:
+
+``` python
+def validate_keys(schema_to_validate):
+    assert isinstance(schema_to_validate, dict)
+    is_valid = False
+    counter = 0
+    print("validating schema keys...")
+
+    for key in schema_to_validate.keys():
+
+        if key not in PYDEVOPS_KEYS:
+            is_valid = False
+            print("the schema has an invalid key")
+            return is_valid
+        else:
+            counter += 1
+
+    # the document doesn't have all required keys
+    if counter < len(PYDEVOPS_KEYS):
+        is_valid = False
+        print("The schema does't have all the required keys")
+    else:
+        is_valid = True
+
+    return is_valid
+```
 ## Arquitectura y tecnologias usadas
 
 ### Arquitectura de la app
