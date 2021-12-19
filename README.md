@@ -57,6 +57,20 @@ La aplicación ha sido desarrollada con el lenguaje de programacion python versi
 
 https://www.tablesgenerator.com/markdown_tables
 
+|  tecnologías |  requisitos | 1 almacenar datos de los items  | 2 extraer datos de los items  | 3 transformar json a markdown | 4 almacenar contenido de los items  | 5 renderizar páginas  | 6 customizar estilos | 7 <br> testear la  aplicación  |
+|---|---|---|---|---|---|---|---|---|
+|  MongoDB Atlas | 1  | :heavy_check_mark:  | :x:  | :x:  | :x:  |  :x: |  :x: |  :x: |
+| python | 1  | :heavy_check_mark:  |  :heavy_check_mark: |  :heavy_check_mark: | :x: | :x:  | :x:  |  :x: |
+| pymongo  |  2 | :x: |  :heavy_check_mark: |  :x: |  :x: | :x:  |  :x: |  :x: |
+| pytest | 3  |  :x: | :x:  | :x:  | :x:  | :x:  | :x:  | :heavy_check_mark:  |
+|  Markdown | 4  |  :x: | :x:  | :x:  |  :heavy_check_mark: | :x:  |  :x: |  :x: |
+|  HTML 5 | 4  |  :x: | :x:  | :x:  |  :heavy_check_mark: | :x:  |  :x: |  :x: |
+| Hugo  |  5 |  :x: |  :x: | :x:  | :heavy_check_mark:  | :heavy_check_mark:  | :x:  | :x:  |
+| CSS 3 |  6 | :x:  | :x:  | :x:  |  :x: | :x:  | :heavy_check_mark:  | :x:  |
+| pytest | 7  |  :x: | :x:  | :x:  | :x:  | :x:  | :x:  | :heavy_check_mark:  |
+
+
+
 # Diseño 
 
 ## Diagrama de componentes
