@@ -8,9 +8,9 @@ Tu tutor de empresa quiere aprovechar que has llegado para intentar implementar 
 - Hugo, al arrancar, leerá los ficheros Markdown y los transformará en documentos HTML para servirlos en la “nueva web”.Tu tutor no ha usado nunca Hugo ni ningún otro generador de sitios estáticos, pero quieren que alguien aprenda a usarlo para evaluar su implantación en la intranet de la empresa. 
 - Tendrás que customizar los estilos CSS que utiliza Hugo para darle la presentación adecuada.
 
-# Metodologia
+# Metodología
 
-La metodologia usada para este proyecto fue la metodología kanban.
+La metodología usada para este proyecto fue la kanban.
 
 Esta metodología es muy sencilla, se puede actualizar y los equipos de trabajo la pueden asumir sin problema. Al ser un método visual permite que con un simple vistazo se conozca el estado de los proyectos y se puedan asignar nuevas tareas de manera muy efectiva. Para aplicarlo, es necesario un tablero de tareas con el que poder mejorar el trabajo y tener un ritmo sostenible. 
 
@@ -36,7 +36,7 @@ Respecto a Model, encontramos dos bloques diferenciados:
     - Delete: elimina los items de la BBDD
     - Create: crea los items de la BBDD
     - Update: actualiza los items de la BBDD
-## Posibles tecnologias
+## Posibles tecnologías
 
 La principal funcionalidad es generar archivos Markdown con los datos almacenados en la base de datos MongoAtlas en el Static site generator Hugo. A continuación se especifícan las tecnologías utilizadas.
 
@@ -53,7 +53,7 @@ La aplicación ha sido desarrollada con el lenguaje de programacion python versi
 - Para la conexión a la BBDD con pymongo tuvimos que añadir certifi para la conexión SSL.
 - La validación de los schema se ha instalado el módulo jsonchema.
 
-## tabla de tecnologias
+## tabla de tecnologías
 
 https://www.tablesgenerator.com/markdown_tables
 
