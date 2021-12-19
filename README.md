@@ -57,7 +57,7 @@ La aplicación ha sido desarrollada con el lenguaje de programacion python versi
 
 https://www.tablesgenerator.com/markdown_tables
 
-|  tecnologías |  requisitos | 1 almacenar datos de los items  | 2 extraer datos de los items  | 3 transformar json a markdown | 4 almacenar contenido de los items  | 5 renderizar páginas  | 6 customizar estilos | 7 <br> testear la  aplicación  |
+|  tecnologías |  requisitos | 1 <br> almacenar datos de los items  | 2 <br> extraer datos de los items  | 3 <br> transformar json a markdown | 4 <br> almacenar contenido de los items  | 5 renderizar páginas  | 6 customizar estilos | 7 <br> testear la  aplicación  |
 |---|---|---|---|---|---|---|---|---|
 |  MongoDB Atlas | 1  | :heavy_check_mark:  | :x:  | :x:  | :x:  |  :x: |  :x: |  :x: |
 | python | 1  | :heavy_check_mark:  |  :heavy_check_mark: |  :heavy_check_mark: | :x: | :x:  | :x:  |  :x: |
