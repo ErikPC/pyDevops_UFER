@@ -641,3 +641,32 @@ try:
 A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivas asignaturas.
 
 <img src="./readme_pictures/clockify.PNG">
+
+## Comparación temporal
+## Dificultades
+
+En cuanto a las dificultades:
+
+- Aprender a usar Hugo e indagar en su documentación. Nos sirvió bastante el libro "Build Websites with Hugo: Fast Web Development with Markdown", además del curso de youtube de Mike Dane https://www.youtube.com/watch?v=qtIqKaDlqXo y la documentación oficial de Hugo en https://gohugo.io/
+
+- Hacer testing de los inputs de usuario ya que era necesario mockear los inputs y desconociamos como hacerlo.
+
+- El tiempo para realizar el proyecto no fue suficiente para cumplir todos los objetivos en mente.
+
+- Hacer tests de integración de los módulos que juntaban varios submódulos.
+
+## Futuras mejoras
+
+De momento son las siguientes:
+
+1. Añadir un formulario para mejorar la usabilidad de la app
+   
+2. Añadir una interfaz gráfica con Tkinter (librería de python) para no depender de un formulario externo
+   
+3. Añadir la funcionalidad de actualizar mas campos de los servicios, ya que solo se puede actualizar el precio
+   
+4. Automatizar la eliminación de las amenities que hagan referencia a un servicio no disponible en la página
+   
+5. Mejorar la UI de la página
+   
+6. Hacer uso de la librería 'typer' de python para manejar los inputs de usuario con mayor profesionalidad
