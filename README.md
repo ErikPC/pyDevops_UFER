@@ -16,6 +16,10 @@ Esta metodología es muy sencilla, se puede actualizar y los equipos de trabajo 
 
 En nuestro caso, nos hemos guiado por las historias de usuario y en base a estas hemos ido desarrollando pequeñas tareas que aportaran valor a cada historia y permitieran completarlas.
 
+Nos aprovechamos del apartado project del proyecto, ya que Github te deja gestionar el proyecto de múltiples maneras:
+
+![kanban](readme_pictures/kanban.png)
+
 # Analisis
 
 ## Primer diagrama
@@ -624,5 +628,3 @@ try:
             print('insertion done successfully')
             return new_document_id
 ```
-
-
