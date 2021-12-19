@@ -486,6 +486,19 @@ En nuestro caso, creamos el tema desde cero y todavía necesita ser mejorado.
 
 Hicimos cambios en el config.toml para poder renderizar html dentro de los archivos markdown dentro del directorio content, además de especificar las amenities como taxonomies.
 
+``` toml
+[taxonomies]
+  amenity = 'amenities'
+```
+
+Esto se pudo conseguir debido a que se especificaron en el frontmatter de cada página de contenido. Como por ejemplo en la página del servicio Ufer Bus:
+
+```yaml
+title: "Ufer Bus"
+draft: false
+amenities: ['WiFi', 'Water', 'Snacks', 'Beer', 'TV']
+```
+
 Respecto al esqueleto de la página, en el directorio layouts encontramos _default, partials, services y el archivo index.html
 
 El archivo index.html hace referencia a partials/pagecontent.html donde se muestra el contenido de la página y el título usando variables (.Cotent y .Title) de Hugo entre {{}}.
@@ -499,16 +512,117 @@ Simplemente se visualiza el contenido de la página de los archivos markdown.
 
 En list.html se renderiza el html para las páginas que listan los servicios ofrecidos en la web, donde se aprovecha la lógica de Hugo para hacer un bucle sobre todos los títulos de los contenidos para mostrar los servicios en un menú vertical.
 
+![menu vertical](readme_pictures/menu_services.png)
+
 En services/single.html se enseña una lista con todos los servicios al igual que en list.html, además de enseñar el contenido de los ficheros markdown situados en la carpeta content/services
 
+![service page](readme_pictures/service_page.png)
+
 En la página de amenities, se generan las categorias de los items que se añaden.
+
+![amenities list](readme_pictures/amennities.png)
 
 Finalmente tenemos la carpeta content, donde encontramos el contenido de la web.
 
 _index.md hace referencia al contenido de la página index que nos aparece la primera al lanzar Hugo.
 
+![index](readme_pictures/index.png)
+
 En review.md la idea era hacer un formulario para enviar datos a la base de datos para valorar los servicios, por lo tanto todavía está en proceso.
 
 Y en services encontramos todos los servicios de ufos que se ofrecen en la página en forma de ficheros markdown.
+
+## Pruebas
+
+Para hacer las pruebas nos creamos una colección para realizar CRUD sobre sus documentos. También usamos la librería pytest para hacer los tests unitarios de los módulos.
+
+Con pytest usamos custom markers para lanzar los tests individualmente con su nombre representativo (unit tests) y además lanzamos los tests sin los markers para comprobar que los anteriores ya pasados seguían pasando (tests de regresión).
+
+```ini
+[pytest]
+markers =
+    test_create_service
+    test_delete_data
+    test_validate_keys
+    test_validate_value_types
+    test_validate_schema
+    test_select_service
+    test_file_exists
+    test_fill_array
+    test_fill_string
+    test_fill_int
+    test_update_price
+
+```
+
+aquí tenemos los markers utilizados
+
+![collections](readme_pictures/collections.png)
+
+y aquí la BBDD con las colecciones con las que hicimos pruebas y la definitiva para almacenar los servicios fue "ufer".
+
+Respecto a los tests, aquí tenemos un ejemplo de uno:
+
+```python
+import pytest
+from src.model.content_updation.update_price import update_service_price
+
+# route: test_files/name_file.file_type
+
+route = 'test_files/'
+file_type = '.md'
+
+# valid info
+info1 = {
+    'name': 'Ufer Bacon',
+    'current_price': 30,
+    'new_price': 20
+}
+
+# valid info
+info2 = {
+    'name': 'Ufer Spam',
+    'current_price': 40,
+    'new_price': 50
+}
+
+# invalid info
+info_bad = {
+    'name': 'Ufer Loco',
+    'current_price': 40,
+    'new_price': 50
+}
+
+# None info
+info3 = None
+
+
+@pytest.mark.test_update_price
+def test_update_price():
+    assert update_service_price(info1, route, file_type) == True
+    assert update_service_price(info2, route, file_type) == True
+    assert update_service_price(info3, route, file_type) == False
+    assert update_service_price(info_bad, route, file_type) is None
+
+```
+Puntos a tener en cuenta:
+
+- Se usan los decoradores para indicar que el test va a ser llamado desde pytest a través del marker que se le ha asignado, previamente configurado en el archivo de configuración pytest.ini
+
+- Se usan aserciones para comprobar la validez de los tests. Si alguna no se cumple, el programa termina su ejecución indicando donde no se cumple la condición.
+
+- Se ha creado un directorio al mismo nivel con archivos markdown para actualizar su precio. Si este se actualiza, nos devuelve un booleano True, si el archivo no existe nos devuelve el objeto None y si no se pasa ninguna información para actualizar nos devuelve el booleano False.
+
+Para hacer las operaciones de CRUD se han usado los bloques try/except para capturas excepciones en tiempo de ejecución para poder retomar el flujo normal del programa. Como por ejemplo si falla una operación de inserción en la colección el programa no termina su ejecución:
+
+```python
+try:
+            new_document_id = collection.insert_one(document)
+        except OperationFailure:
+            print('the insert operation failed')
+        else:
+            print('insertion done successfully')
+            return new_document_id
+```
 
 
