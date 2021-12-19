@@ -20,7 +20,7 @@ Nos aprovechamos del apartado project del proyecto, ya que Github te deja gestio
 
 ![kanban](readme_pictures/kanban.png)
 
-# Analisis
+# Análisis
 
 ## Primer diagrama
 ![diagrama inicial](readme_pictures/análisis%20inicial.png)
