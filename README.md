@@ -490,12 +490,6 @@ La arquitectura de la aplicación se divide en tres capas y una entidad diferenc
 
  los schema se ha instalado el módulo jsonchema.
 
-## Clockify
-
-A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivas asignaturas.
-
-<img src="./readme_pictures/clockify.PNG">
-
 ## Frontend
 
 La página web se encuentra el la carpeta src/view/minimal donde se aprecia la estructura de directorios de Hugo.
@@ -642,3 +636,8 @@ try:
             print('insertion done successfully')
             return new_document_id
 ```
+## Clockify
+
+A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivas asignaturas.
+
+<img src="./readme_pictures/clockify.PNG">
