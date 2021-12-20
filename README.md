@@ -616,6 +616,125 @@ def test_update_price():
     assert update_service_price(info_bad, route, file_type) is None
 
 ```
+
+## Pruebas sobre CRUD
+
+### C
+
+### R
+
+### U
+
+En el update lo que hacemos es modificar un precio , ya que es lo más probable de que cambie. 
+
+El código que usamos es:
+
+Primero creamos una funcion que conecta con la base de datos que coge el precio de un item:
+```python
+def get_price(collection, service):
+
+    service_price = 0
+
+    try:
+        for doc in collection.find({}, {'_id': False}):
+            if doc['name'] == service:
+                service_price = doc['price']
+
+    except OperationFailure:
+        print("get_price operation failed")
+    else:
+        return service_price
+```
+Posteriormente se se usa en la que updatearemos el precio.
+```python
+
+def update_price(collection):
+
+    # get all services
+    services = get_values(collection, 'name')
+
+    # print all services
+    print('servicios disponibles:', services)
+
+    # select service
+    service = select_service(services)
+
+    # where to do the operation
+    query = {"name": service}
+
+    # show current price
+    current_price = get_price(collection, service)
+    print('current price:', current_price)
+
+    # get new price
+    while True:
+
+        try:
+            input_value = int(input("select the new price: "))
+            if input_value != current_price and input_value > 0:
+                break
+            else:
+                print('Price must be diferent from the current one and greater than 0!')
+
+        except ValueError:
+            print('Invalid Input. price must be an int.')
+
+    # what to update
+    new_price = {"$set": {"price": input_value}}
+
+    # update operation
+    try:
+        collection.update_one(query, new_price)
+    except OperationFailure:
+        print("Operation error, price not updated successfully")
+        return None
+    else:
+        print("price updated successfully!")
+        return {
+            'name': service,
+            'current_price': current_price,
+            'new_price': input_value
+        }
+```
+Nos conectamos a la base de datos y una vez seleccionado el servicio a modificar , nos aseguramos que sea un entero el valor introducido.
+Con la siguiente funcion hacemos que cambie el dato que se acaba de actualizar en la BBDD en Hugo.
+
+```python
+def update_service_price(info, destination, file_type):
+
+    if info is not None:
+
+        # open file in read mode
+        try:
+            file = open(destination + info['name'] + file_type, "r")
+
+        except FileNotFoundError:
+            print('file not found')
+
+        else:
+            replacement = ''
+
+            # loop through the file
+            for line in file:
+                line = line.strip()
+                changes = line.replace(str(info['current_price']), str(info['new_price']))
+                replacement = replacement + changes + "\n"
+
+            file.close()
+
+            # open file in write mode
+            fout = open(destination + info['name'] + file_type, "w")
+            fout.write(replacement)
+            fout.close()
+            return True
+    else:
+        return False
+```
+finalmente añadire unas capturas para visualizar el funcionamiento.
+
+<img src ="./readme_pictures/update_pruebas1.PNG">
+<img src ="./readme_pictures/update_pruebas2.PNG">
+
 Puntos a tener en cuenta:
 
 - Se usan los decoradores para indicar que el test va a ser llamado desde pytest a través del marker que se le ha asignado, previamente configurado en el archivo de configuración pytest.ini
