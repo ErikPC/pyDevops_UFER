@@ -616,6 +616,25 @@ def test_update_price():
     assert update_service_price(info_bad, route, file_type) is None
 
 ```
+Puntos a tener en cuenta:
+
+- Se usan los decoradores para indicar que el test va a ser llamado desde pytest a través del marker que se le ha asignado, previamente configurado en el archivo de configuración pytest.ini
+
+- Se usan aserciones para comprobar la validez de los tests. Si alguna no se cumple, el programa termina su ejecución indicando donde no se cumple la condición.
+
+- Se ha creado un directorio al mismo nivel con archivos markdown para actualizar su precio. Si este se actualiza, nos devuelve un booleano True, si el archivo no existe nos devuelve el objeto None y si no se pasa ninguna información para actualizar nos devuelve el booleano False.
+
+Para hacer las operaciones de CRUD se han usado los bloques try/except para capturas excepciones en tiempo de ejecución para poder retomar el flujo normal del programa. Como por ejemplo si falla una operación de inserción en la colección el programa no termina su ejecución:
+
+```python
+try:
+            new_document_id = collection.insert_one(document)
+        except OperationFailure:
+            print('the insert operation failed')
+        else:
+            print('insertion done successfully')
+            return new_document_id
+```
 
 ## Pruebas sobre CRUD
 
@@ -645,7 +664,7 @@ def get_price(collection, service):
     else:
         return service_price
 ```
-Posteriormente se se usa en la que updatearemos el precio.
+Posteriormente se usa en la que actualizaremos el precio.
 ```python
 
 def update_price(collection):
@@ -696,8 +715,8 @@ def update_price(collection):
             'new_price': input_value
         }
 ```
-Nos conectamos a la base de datos y una vez seleccionado el servicio a modificar , nos aseguramos que sea un entero el valor introducido.
-Con la siguiente funcion hacemos que cambie el dato que se acaba de actualizar en la BBDD en Hugo.
+Una vez seleccionado el servicio a modificar, nos aseguramos que el valor introducido sea un entero mayor que cero para respetar el esquema.
+Con la siguiente función hacemos que cambie el dato que se acaba de actualizar en la BBDD en Hugo.
 
 ```python
 def update_service_price(info, destination, file_type):
@@ -730,30 +749,12 @@ def update_service_price(info, destination, file_type):
     else:
         return False
 ```
-finalmente añadire unas capturas para visualizar el funcionamiento.
+Funcionamiento del CRUD:
 
 <img src ="./readme_pictures/update_pruebas1.PNG">
 <img src ="./readme_pictures/update_pruebas2.PNG">
 
-Puntos a tener en cuenta:
 
-- Se usan los decoradores para indicar que el test va a ser llamado desde pytest a través del marker que se le ha asignado, previamente configurado en el archivo de configuración pytest.ini
-
-- Se usan aserciones para comprobar la validez de los tests. Si alguna no se cumple, el programa termina su ejecución indicando donde no se cumple la condición.
-
-- Se ha creado un directorio al mismo nivel con archivos markdown para actualizar su precio. Si este se actualiza, nos devuelve un booleano True, si el archivo no existe nos devuelve el objeto None y si no se pasa ninguna información para actualizar nos devuelve el booleano False.
-
-Para hacer las operaciones de CRUD se han usado los bloques try/except para capturas excepciones en tiempo de ejecución para poder retomar el flujo normal del programa. Como por ejemplo si falla una operación de inserción en la colección el programa no termina su ejecución:
-
-```python
-try:
-            new_document_id = collection.insert_one(document)
-        except OperationFailure:
-            print('the insert operation failed')
-        else:
-            print('insertion done successfully')
-            return new_document_id
-```
 ## Clockify
 
 A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivas asignaturas.
