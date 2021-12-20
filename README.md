@@ -62,7 +62,6 @@ https://www.tablesgenerator.com/markdown_tables
 |  MongoDB Atlas | 1  | :heavy_check_mark:  | :x:  | :x:  | :x:  |  :x: |  :x: |  :x: |
 | python | 1  | :heavy_check_mark:  |  :heavy_check_mark: |  :heavy_check_mark: | :x: | :x:  | :x:  |  :x: |
 | pymongo  |  2 | :x: |  :heavy_check_mark: |  :x: |  :x: | :x:  |  :x: |  :x: |
-| pytest | 3  |  :x: | :x:  | :x:  | :x:  | :x:  | :x:  | :heavy_check_mark:  |
 |  Markdown | 4  |  :x: | :x:  | :x:  |  :heavy_check_mark: | :x:  |  :x: |  :x: |
 |  HTML 5 | 4  |  :x: | :x:  | :x:  |  :heavy_check_mark: | :x:  |  :x: |  :x: |
 | Hugo  |  5 |  :x: |  :x: | :x:  | :heavy_check_mark:  | :heavy_check_mark:  | :x:  | :x:  |
