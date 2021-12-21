@@ -795,7 +795,7 @@ Funcionamiento del Update:
 
 ### D
 
-Con el delete lo que hacemos es eliminar un item de la base de datos y automaticamente aliminarlo de Hugo.
+Con el delete lo que hacemos es eliminar un item de la base de datos y automaticamente eliminarlo de Hugo.
 
 Con el siguiente modulo eliminamos de la base de datos un item de los que le enseñamos. Que son los que estan en la pagina. Pasando por una confirmacion de si es ese item , para no eliminarlo por error.
 
