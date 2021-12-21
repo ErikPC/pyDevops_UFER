@@ -665,6 +665,13 @@ try:
 
 ### R
 
+La idea del read esta centrada en visualizar los datos de la BBDD en Hugo.
+
+Funcionamiento de read:
+
+<img src="./readme_pictures/read_pruebas_bbdd.PNG" width =45%>
+<img src="./readme_pictures/read_pruebas.PNG" width = 45%>
+
 ### U
 
 En el update lo que hacemos es modificar un precio , ya que es lo más probable de que cambie.
@@ -779,8 +786,11 @@ def update_service_price(info, destination, file_type):
 
 Funcionamiento del Update:
 
+
+<img src="readme_pictures/update_pruebas_bbdd1.PNG">
 <img src ="./readme_pictures/update_pruebas1.PNG">
 <img src ="./readme_pictures/update_pruebas2.PNG">
+<img src="./readme_pictures/update_pruebas_bbdd2.PNG">
 
 ### D
 
@@ -834,9 +844,11 @@ def delete_service(service):
 
 Funcionamiento de Deletion:
 
+<img src="./readme_pictures/delete_pruebas_bbdd1.PNG">
 <img src="./readme_pictures/delete_pruebas1.PNG">
 <img src="./readme_pictures/delete_pruebas2.PNG">
 <img src="./readme_pictures/delete_pruebas3.PNG">
+<img src="./readme_pictures/delete_pruebas_bbdd2.PNG">
 
 ## Clockify
 
