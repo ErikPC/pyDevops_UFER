@@ -1,18 +1,22 @@
 # pyDevops_UFER
+
 ---
+
 # Introducción
+
 Tu tutor de empresa quiere aprovechar que has llegado para intentar implementar un sistema de integración y entrega contínua (CI /CD), así que se sienta contigo a hacer una documentación técnica (es decir, unos garabatos en el papel donde venían las panades de carn amb pèsols del berenar) según se le va ocurriendo la solución (ver figura). El diagrama viene a decir algo así:
+
 - Te propone que desarrolles una aplicación Python para extraer los datos de MongoAtlas. Se hace necesario diseñar una especificación del esquema de los documentos JSON.
 - Esos documentos JSON tendrás que transformarlos, también con una aplicación Python, en ficheros Markdown.
 - Luego, has de situar estos ficheros en una estructura de directorios que establece el generador de sitios estáticos llamado “Hugo”, también mediante una aplicación Python que construyas.
-- Hugo, al arrancar, leerá los ficheros Markdown y los transformará en documentos HTML para servirlos en la “nueva web”.Tu tutor no ha usado nunca Hugo ni ningún otro generador de sitios estáticos, pero quieren que alguien aprenda a usarlo para evaluar su implantación en la intranet de la empresa. 
+- Hugo, al arrancar, leerá los ficheros Markdown y los transformará en documentos HTML para servirlos en la “nueva web”.Tu tutor no ha usado nunca Hugo ni ningún otro generador de sitios estáticos, pero quieren que alguien aprenda a usarlo para evaluar su implantación en la intranet de la empresa.
 - Tendrás que customizar los estilos CSS que utiliza Hugo para darle la presentación adecuada.
 
 # Metodología
 
 La metodología usada para este proyecto fue la kanban.
 
-Esta metodología es muy sencilla, se puede actualizar y los equipos de trabajo la pueden asumir sin problema. Al ser un método visual permite que con un simple vistazo se conozca el estado de los proyectos y se puedan asignar nuevas tareas de manera muy efectiva. Para aplicarlo, es necesario un tablero de tareas con el que poder mejorar el trabajo y tener un ritmo sostenible. 
+Esta metodología es muy sencilla, se puede actualizar y los equipos de trabajo la pueden asumir sin problema. Al ser un método visual permite que con un simple vistazo se conozca el estado de los proyectos y se puedan asignar nuevas tareas de manera muy efectiva. Para aplicarlo, es necesario un tablero de tareas con el que poder mejorar el trabajo y tener un ritmo sostenible.
 
 En nuestro caso, nos hemos guiado por las historias de usuario y en base a estas hemos ido desarrollando pequeñas tareas que aportaran valor a cada historia y permitieran completarlas.
 
@@ -23,19 +27,22 @@ Nos aprovechamos del apartado project del proyecto, ya que Github te deja gestio
 # Análisis
 
 ## Primer diagrama
+
 ![diagrama inicial](readme_pictures/análisis%20inicial.png)
 
 La primera idea fue la siguiente:
 
-Desde el módulo Main, se puede realizar la conexión a la base de datos, visualizar la página web, un módulo que iba a controlar la lógica de Model. 
+Desde el módulo Main, se puede realizar la conexión a la base de datos, visualizar la página web, un módulo que iba a controlar la lógica de Model.
 
 Respecto a Model, encontramos dos bloques diferenciados:
+
 - Generate pages: crea páginas a renderizar por el SSG Hugo
-    - Read: lee los documentos json de la colección y los pasa a markdown
+  - Read: lee los documentos json de la colección y los pasa a markdown
 - Acceso a datos:
-    - Delete: elimina los items de la BBDD
-    - Create: crea los items de la BBDD
-    - Update: actualiza los items de la BBDD
+  - Delete: elimina los items de la BBDD
+  - Create: crea los items de la BBDD
+  - Update: actualiza los items de la BBDD
+
 ## Posibles tecnologías
 
 La principal funcionalidad es generar archivos Markdown con los datos almacenados en la base de datos MongoAtlas en el Static site generator Hugo. A continuación se especifícan las tecnologías utilizadas.
@@ -44,7 +51,7 @@ Principalmente, la aplicación gira entorno a una base de datos (BBDD), Mongodb.
 
 Los datos plasmados estaban escritos en un Static site generator, el que nos indicaron usar era Hugo. Hugo es uno de los generadores de sitios estáticos de código abierto más populares. Con su asombrosa velocidad y flexibilidad.
 
-El editor de codigo que podiamos elegir fueron VsCode, pycharm o  sublime text, aunque teniamos más opciones estas fueron las pensadas.
+El editor de codigo que podiamos elegir fueron VsCode, pycharm o sublime text, aunque teniamos más opciones estas fueron las pensadas.
 
 La aplicación ha sido desarrollada con el lenguaje de programacion python version 3.9 . Para crear el programa se han tenido que instalar las siguientes dependencias:
 
@@ -57,20 +64,18 @@ La aplicación ha sido desarrollada con el lenguaje de programacion python versi
 
 https://www.tablesgenerator.com/markdown_tables
 
-|  tecnologías |  requisitos | 1 <br> almacenar datos de los items  | 2 <br> extraer datos de los items  | 3 <br> transformar json a markdown | 4 <br> almacenar contenido de los items  | 5 renderizar páginas  | 6 customizar estilos | 7 <br> testear la  aplicación  |
-|---|---|---|---|---|---|---|---|---|
-|  MongoDB Atlas | 1  | :heavy_check_mark:  | :x:  | :x:  | :x:  |  :x: |  :x: |  :x: |
-| python | 1  | :heavy_check_mark:  |  :heavy_check_mark: |  :heavy_check_mark: | :x: | :x:  | :x:  |  :x: |
-| pymongo  |  2 | :x: |  :heavy_check_mark: |  :x: |  :x: | :x:  |  :x: |  :x: |
-|  Markdown | 4  |  :x: | :x:  | :x:  |  :heavy_check_mark: | :x:  |  :x: |  :x: |
-|  HTML 5 | 4  |  :x: | :x:  | :x:  |  :heavy_check_mark: | :x:  |  :x: |  :x: |
-| Hugo  |  5 |  :x: |  :x: | :x:  | :heavy_check_mark:  | :heavy_check_mark:  | :x:  | :x:  |
-| CSS 3 |  6 | :x:  | :x:  | :x:  |  :x: | :x:  | :heavy_check_mark:  | :x:  |
-| pytest | 7  |  :x: | :x:  | :x:  | :x:  | :x:  | :x:  | :heavy_check_mark:  |
+| tecnologías   | requisitos | 1 <br> almacenar datos de los items | 2 <br> extraer datos de los items | 3 <br> transformar json a markdown | 4 <br> almacenar contenido de los items | 5 renderizar páginas | 6 customizar estilos | 7 <br> testear la aplicación |
+| ------------- | ---------- | ----------------------------------- | --------------------------------- | ---------------------------------- | --------------------------------------- | -------------------- | -------------------- | ---------------------------- |
+| MongoDB Atlas | 1          | :heavy_check_mark:                  | :x:                               | :x:                                | :x:                                     | :x:                  | :x:                  | :x:                          |
+| python        | 1          | :heavy_check_mark:                  | :heavy_check_mark:                | :heavy_check_mark:                 | :x:                                     | :x:                  | :x:                  | :x:                          |
+| pymongo       | 2          | :x:                                 | :heavy_check_mark:                | :x:                                | :x:                                     | :x:                  | :x:                  | :x:                          |
+| Markdown      | 4          | :x:                                 | :x:                               | :x:                                | :heavy_check_mark:                      | :x:                  | :x:                  | :x:                          |
+| HTML 5        | 4          | :x:                                 | :x:                               | :x:                                | :heavy_check_mark:                      | :x:                  | :x:                  | :x:                          |
+| Hugo          | 5          | :x:                                 | :x:                               | :x:                                | :heavy_check_mark:                      | :heavy_check_mark:   | :x:                  | :x:                          |
+| CSS 3         | 6          | :x:                                 | :x:                               | :x:                                | :x:                                     | :x:                  | :heavy_check_mark:   | :x:                          |
+| pytest        | 7          | :x:                                 | :x:                               | :x:                                | :x:                                     | :x:                  | :x:                  | :heavy_check_mark:           |
 
-
-
-# Diseño 
+# Diseño
 
 ## Diagrama de componentes
 
@@ -118,7 +123,8 @@ El repositorio view, contiene todo lo necesario para iniciar Hugo con su configu
 El controller es totalmente dependiente de model, ya que es el encargado de crear un menu para controlar las funcionalidades que hay en model.
 
 ## Esquema de BBDD
-```python 
+
+```python
 {
     "type": "object",
     "properties": {
@@ -142,7 +148,7 @@ Las pruebas seleccionadas principalmente son sobre el CRUD de la aplicación.
 
 Se probara como se elimina un item de la base de datos, como se actualizará un documento en la base de datos y como se creará un documento.
 
-Además, se usarán markers personalizados para hacer tests unitarios de cada módulo. 
+Además, se usarán markers personalizados para hacer tests unitarios de cada módulo.
 
 En el fichero pytest.ini se encuentran todos los markers.
 
@@ -157,13 +163,14 @@ Como hemos comentado anteriormente, hemos acabado usando vscode por su ayuda con
 Los módulos python comentados en el apartado de posibles tecnologías finalmente fueron utilizados para la conexión de la base de datos y la validación del schema.
 
 ## Backend
+
 Lo encontramos en los módulos dentro de Model.
 
 Los referentes a content se encargan para actualizar los directorios de Hugo:
 
 - content-deletion: en el momento en que se elimine un item de la base de datos, también lo hará en el sitio web.
 
-``` python 
+```python
 
 def delete_service(service):
 
@@ -178,9 +185,10 @@ def delete_service(service):
 
 
 ```
+
 - content_generation: genera los archivos markdown en el directorio de contenido de Hugo para que los items sean visualizados.
-  
-``` python
+
+```python
 def generate_files(collection):
     # counter for every file added
     counter = 0
@@ -203,9 +211,10 @@ def generate_files(collection):
     else:
         print('items added to the website:', counter)
 ```
+
 - content_updation: en este módulo se actualiza el precio del item de la pagina seleccionado
 
-``` python
+```python
 def update_service_price(info, destination, file_type):
 
     if info is not None:
@@ -236,10 +245,12 @@ def update_service_price(info, destination, file_type):
     else:
         return False
 ```
+
 En cuanto a los módulos data, son los que representan el CRUD a la BBDD:
 
 - data_creation (C):
-``` python
+
+```python
 def create_service(collection):
     # generate empty_values document
     document = {
@@ -274,7 +285,7 @@ def create_service(collection):
             document[PYDEVOPS_KEYS[index]] = fill_int(PYDEVOPS_KEYS[index])
         elif PYDEVOPS_VALUE_TYPES[index] == list:
             document[PYDEVOPS_KEYS[index]] = fill_array()
-    
+
      # schema validation
     if validate_schema(document):
 
@@ -288,11 +299,12 @@ def create_service(collection):
     else:
         return False
 ```
+
 Se recorren las variables globales que almacenan las claves y los valores del schema y en función del tipo de dato se usan diferentes operaciones para llenar los valores del documento a enviar a la BBDD. Después se valida el schema y se inserta el documento llenado a la colección.
 
 - data_extraction (R):
 
-``` python
+```python
 def load_data(collection):
     documents = []
 
@@ -306,11 +318,12 @@ def load_data(collection):
         return documents
 
 ```
+
 En este módulo se extraen los documentos de la colección y se almacenan en una lista de diccionarios para poder ser tratados posteriormente y generar su contenido en la página si todavía no se encuentran en ella.
 
 - data_updation (U):
 
-``` python
+```python
 def get_price(collection, service):
 
     service_price = 0
@@ -373,11 +386,12 @@ def update_price(collection):
             'new_price': input_value
         }
 ```
+
 Se usan dos módulos. Uno para obtener el precio actual del item en la BBDD y otro para seleccionar el nuevo precio y actualizarlo.
 
 - data_deletion (D):
 
-``` python
+```python
 def delete_data(collection):
     # get all services
     servicios = get_values(collection,'name')
@@ -406,11 +420,12 @@ def delete_data(collection):
         print("item no encontrado")
         return None
 ```
+
 En este módulo se pide el item a eliminar y su confirmación. Si este no completa la confirmación, no se elimina de la base de datos.
 
 - validación del schema:
 
-``` python
+```python
 def validate_keys(schema_to_validate):
     assert isinstance(schema_to_validate, dict)
     is_valid = False
@@ -435,9 +450,10 @@ def validate_keys(schema_to_validate):
 
     return is_valid
 ```
+
 En este módulo se chequea que las claves sean las esperadas y que no se deje a ninguna de ellas.
 
-``` python
+```python
 from jsonschema import validate
 from jsonschema.exceptions import ValidationError
 
@@ -470,7 +486,9 @@ def validate_value_types(schema_to_validate):
         return True
     return False
 ```
+
 En este otro, se comprueba que los valores sean del tipo correcto. Como podemos apreciar, se ha hecho uso de la librería jsonschema.
+
 ## Arquitectura y tecnologias usadas
 
 ### Arquitectura de la app
@@ -487,7 +505,7 @@ La arquitectura de la aplicación se divide en tres capas y una entidad diferenc
 
 - MongoDB Atlas: es la base de datos en la nube sobre la cual interactua la aplicación.
 
- los schema se ha instalado el módulo jsonchema.
+los schema se ha instalado el módulo jsonchema.
 
 ## Frontend
 
@@ -497,7 +515,7 @@ En nuestro caso, creamos el tema desde cero y todavía necesita ser mejorado.
 
 Hicimos cambios en el config.toml para poder renderizar html dentro de los archivos markdown dentro del directorio content, además de especificar las amenities como taxonomies.
 
-``` toml
+```toml
 [taxonomies]
   amenity = 'amenities'
 ```
@@ -507,18 +525,18 @@ Esto se pudo conseguir debido a que se especificaron en el frontmatter de cada p
 ```yaml
 title: "Ufer Bus"
 draft: false
-amenities: ['WiFi', 'Water', 'Snacks', 'Beer', 'TV']
+amenities: ["WiFi", "Water", "Snacks", "Beer", "TV"]
 ```
 
-Respecto al esqueleto de la página, en el directorio layouts encontramos _default, partials, services y el archivo index.html
+Respecto al esqueleto de la página, en el directorio layouts encontramos \_default, partials, services y el archivo index.html
 
 El archivo index.html hace referencia a partials/pagecontent.html donde se muestra el contenido de la página y el título usando variables (.Cotent y .Title) de Hugo entre {{}}.
 
-En _default se definen los esqueletos de las páginas de tipo single y de tipo list además de la base de todos los html de las páginas de la web.
+En \_default se definen los esqueletos de las páginas de tipo single y de tipo list además de la base de todos los html de las páginas de la web.
 
 En baseof.html se definen el head, el nav, el body, el main y el footer. Donde se usan variables de Hugo para definir un title diferente en cada página. También se define el main y el footer recibe el año en que nos encontramos (particularidad de Hugo para determinar el año en que nos encontramos)
 
-En single.html se define la base del html en cada página de contenido que no sea de servicios de ufos. 
+En single.html se define la base del html en cada página de contenido que no sea de servicios de ufos.
 Simplemente se visualiza el contenido de la página de los archivos markdown.
 
 En list.html se renderiza el html para las páginas que listan los servicios ofrecidos en la web, donde se aprovecha la lógica de Hugo para hacer un bucle sobre todos los títulos de los contenidos para mostrar los servicios en un menú vertical.
@@ -535,7 +553,7 @@ En la página de amenities, se generan las categorias de los items que se añade
 
 Finalmente tenemos la carpeta content, donde encontramos el contenido de la web.
 
-_index.md hace referencia al contenido de la página index que nos aparece la primera al lanzar Hugo.
+\_index.md hace referencia al contenido de la página index que nos aparece la primera al lanzar Hugo.
 
 ![index](readme_pictures/index.png)
 
@@ -616,6 +634,7 @@ def test_update_price():
     assert update_service_price(info_bad, route, file_type) is None
 
 ```
+
 Puntos a tener en cuenta:
 
 - Se usan los decoradores para indicar que el test va a ser llamado desde pytest a través del marker que se le ha asignado, previamente configurado en el archivo de configuración pytest.ini
@@ -640,15 +659,20 @@ try:
 
 ### C
 
+- Lista capturas Joan: 
+    - En la base de datos , antes de la actualizacion y despues de cambiar el precio
+    - En la base de datos , un item y despues de eliminarlo.
+
 ### R
 
 ### U
 
-En el update lo que hacemos es modificar un precio , ya que es lo más probable de que cambie. 
+En el update lo que hacemos es modificar un precio , ya que es lo más probable de que cambie.
 
 El código que usamos es:
 
-Primero creamos una funcion que conecta con la base de datos que coge el precio de un item:
+Primero creamos una funcion que coge el precio de un item:
+
 ```python
 def get_price(collection, service):
 
@@ -664,7 +688,9 @@ def get_price(collection, service):
     else:
         return service_price
 ```
+
 Posteriormente se usa en la que actualizaremos el precio.
+
 ```python
 
 def update_price(collection):
@@ -715,6 +741,7 @@ def update_price(collection):
             'new_price': input_value
         }
 ```
+
 Una vez seleccionado el servicio a modificar, nos aseguramos que el valor introducido sea un entero mayor que cero para respetar el esquema.
 Con la siguiente función hacemos que cambie el dato que se acaba de actualizar en la BBDD en Hugo.
 
@@ -749,19 +776,82 @@ def update_service_price(info, destination, file_type):
     else:
         return False
 ```
-Funcionamiento del CRUD:
+
+Funcionamiento del Update:
 
 <img src ="./readme_pictures/update_pruebas1.PNG">
 <img src ="./readme_pictures/update_pruebas2.PNG">
 
+### D
+
+Con el delete lo que hacemos es eliminar un item de la base de datos y automaticamente aliminarlo de Hugo.
+
+Con el siguiente modulo eliminamos de la base de datos un item de los que le enseñamos. Que son los que estan en la pagina. Pasando por una confirmacion de si es ese item , para no eliminarlo por error.
+
+```python
+
+def delete_data(collection):
+    # get all services
+    servicios = get_values(collection,'name')
+
+    # print all services
+    print('servicios disponibles:', servicios)
+
+    # delete document from the database
+    servicio_eliminar = input("Escribe el servicio que quieres eliminar: \n").strip().title()
+    confirm = input("Vuelve a escribir el servicio: \n").strip().title()
+
+    if servicio_eliminar != confirm:
+        print("Los servicios no coinciden")
+
+    elif servicio_eliminar in servicios:
+
+        try:
+            collection.delete_one({"name": servicio_eliminar})
+        except OperationFailure:
+            print("La operación ha fallado")
+        else:
+            print("Servicio eliminado correctamente")
+            return servicio_eliminar
+
+    else:
+        print("item no encontrado")
+        return None
+```
+
+```python
+def delete_service(service):
+
+    # tell the user which service wants to delete
+    # input('Service to delete: ').strip().title()
+    service_to_delete = service
+
+    if file_exists(destiny, service_to_delete, file_type):
+        os.remove(destiny + service_to_delete + file_type)
+    else:
+        print("The service doesn't exists")
+```
+
+Funcionamiento de Deletion:
+
+<img src="./readme_pictures/delete_pruebas1.PNG">
+<img src="./readme_pictures/delete_pruebas2.PNG">
+<img src="./readme_pictures/delete_pruebas3.PNG">
 
 ## Clockify
+
+En el primer momento hicimos un tiempo estimado de cuanto ibamos a invertir en cada modulo:
+
+<img src="./readme_pictures/clockify_primer_tiempo.PNG">
+
+En un primer momento pensabamos que solo teniamos que pasar los items de la BBDD y añadirlos a la pagina , posteriormente como añadimos el CRUD al completo, se alargaron la horas.
 
 A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivas asignaturas.
 
 <img src="./readme_pictures/clockify.PNG">
 
 ## Comparación temporal
+
 ## Dificultades
 
 En cuanto a las dificultades:
@@ -779,13 +869,8 @@ En cuanto a las dificultades:
 De momento son las siguientes:
 
 1. Añadir un formulario para mejorar la usabilidad de la app
-   
 2. Añadir una interfaz gráfica con Tkinter (librería de python) para no depender de un formulario externo
-   
 3. Añadir la funcionalidad de actualizar mas campos de los servicios, ya que solo se puede actualizar el precio
-   
 4. Automatizar la eliminación de las amenities que hagan referencia a un servicio no disponible en la página
-   
 5. Mejorar la UI de la página
-   
 6. Hacer uso de la librería 'typer' de python para manejar los inputs de usuario con mayor profesionalidad
