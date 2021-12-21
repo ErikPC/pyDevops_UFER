@@ -141,6 +141,7 @@ El controller es totalmente dependiente de model, ya que es el encargado de crea
     }
 }
 ```
+Los documentos que no cumplan el siguiente schema no serán insertados y se lanzará un mensaje al usuario por consola informando de la invalidez del documento.
 
 ## Futuras Pruebas
 
