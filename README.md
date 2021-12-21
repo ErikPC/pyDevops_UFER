@@ -32,7 +32,7 @@ Nos aprovechamos del apartado project del proyecto, ya que Github te deja gestio
 
 La primera idea fue la siguiente:
 
-Desde el módulo Main, se puede realizar la conexión a la base de datos, visualizar la página web, un módulo que iba a controlar la lógica de Model.
+Desde el módulo Main, se puede realizar la conexión a la base de datos, visualizar la página web y un módulo que iba a controlar la lógica de Model.
 
 Respecto a Model, encontramos dos bloques diferenciados:
 
