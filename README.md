@@ -851,7 +851,7 @@ Funcionamiento de Deletion:
 <img src="./readme_pictures/delete_pruebas3.PNG">
 <img src="./readme_pictures/delete_pruebas_bbdd2.PNG">
 
-## Clockify
+## Comparación temporal con Clockify
 
 En el primer momento hicimos un tiempo estimado de cuanto ibamos a invertir en cada modulo:
 
@@ -862,8 +862,6 @@ En un primer momento pensabamos que solo teniamos que pasar los items de la BBDD
 A continuación se mostrarán las horas invertidas en el proyecto, separada en sus respectivas asignaturas.
 
 <img src="./readme_pictures/clockify.PNG">
-
-## Comparación temporal
 
 ## Dificultades
 
