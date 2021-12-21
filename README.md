@@ -81,7 +81,7 @@ https://www.tablesgenerator.com/markdown_tables
 
 <img src="./readme_pictures/diagrama_componentes_pydevops.png">
 
-Nuestro programa principal de compone de tres elementos esenciales y un cuarto que es el dedicado a la Static site gen:
+Nuestro programa principal de compone de tres elementos esenciales y un cuarto que es el dedicado al SSG Hugo:
 
 - repository
 - model
