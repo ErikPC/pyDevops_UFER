@@ -660,15 +660,123 @@ try:
 
 ### C
 
-- Lista capturas Joan: 
-    - En la base de datos , antes de la actualizacion y despues de cambiar el precio
-    - En la base de datos , un item y despues de eliminarlo.
+La idea del create se basa en crear un item vía línea de comandos. Hacemos la prueba:
+
+comprobamos que no existe un ufo con el nombre "Ufer Juan":
+
+![pre_create](readme_pictures/pre_create.png)
+
+Lanzamos el programa, seleccionamos la opción de crear un item en la página y rellenamos la información del documento:
+
+![fill doc](readme_pictures/create_doc.png)
+
+Acto seguido se ejecuta la lógica mencionada en el apartado 'backend', concretamente los modulos de data_creation (crear doc en la BBDD):
+``` python
+def create_service(collection):
+    # generate empty_values document
+    document = {
+        "name": "",
+        "description": "",
+        "driver": "",
+        "passengers": 0,
+        "privacy": "",
+        "seats": "",
+        "propulsion": "",
+        "top_speed": 0,
+        'price': 0,
+        "amenities": []
+    }
+
+    user_instructions = "Para crear un servicio, sigue el siguiente schema:\n" "\n \t\"name\": \"\"," \
+                        "\n\t\"description\": \"\",\n\t" "\"driver\": \"\",\n\t\"passengers\": \"\"," \
+                        "\n\t\"privacy\": \"\",\n\t\"seats\": \"\",\n\t\"propulsion\": ""\"\",\n\t\"top_speed\": " \
+                        "0,\n\t\"amenities\": []\n\t  "
+
+    # tell the user how to fill the values
+    print(user_instructions)
+
+    # fill document values (depending on the value type it has)
+    for index in range(len(PYDEVOPS_KEYS)):
+        if PYDEVOPS_VALUE_TYPES[index] == str:
+            if PYDEVOPS_KEYS[index] == 'name':
+                document[PYDEVOPS_KEYS[index]] = fill_string(PYDEVOPS_KEYS[index]).title()
+            else:
+                document[PYDEVOPS_KEYS[index]] = fill_string(PYDEVOPS_KEYS[index])
+        elif PYDEVOPS_VALUE_TYPES[index] == int:
+            document[PYDEVOPS_KEYS[index]] = fill_int(PYDEVOPS_KEYS[index])
+        elif PYDEVOPS_VALUE_TYPES[index] == list:
+            document[PYDEVOPS_KEYS[index]] = fill_array()
+
+     # schema validation
+    if validate_schema(document):
+
+        try:
+            new_document_id = collection.insert_one(document)
+        except OperationFailure:
+            print('the insert operation failed')
+        else:
+            print('insertion done successfully')
+            return new_document_id
+    else:
+        return False
+```
+ y content_generation (generar el item en la página):
+
+```python
+def generate_files(collection):
+    # counter for every file added
+    counter = 0
+    # list of dicts (ufer data)
+    ufer_docs = load_data(collection)
+
+    for index, doc in enumerate(ufer_docs):
+
+        if not file_exists(destiny, doc['name'], file_type):
+
+            template = generate_template(ufer_docs, index)
+
+            with open(destiny + doc['name'] + file_type, 'w', encoding='UTF-8') as my_file:
+                counter += 1
+                my_file.writelines(template)
+
+    # items added
+    if counter == 0:
+        print('content already up to date')
+    else:
+        print('items added to the website:', counter)
+
+```
+
+Comprobamos que en la colección existe el ufo con el nombre anteriormente mencionado:
+
+![post_create](readme_pictures/post_create.png)
+
+Para concluir, comprobamos que se ha añadido el ufo en la página correctamente:
+
+![item_created](readme_pictures/create_item.png)
 
 ### R
 
 La idea del read esta centrada en visualizar los datos de la BBDD en Hugo.
 
 Funcionamiento de read:
+
+Se usa el módulo de data_extraction:
+
+```python
+def load_data(collection):
+    documents = []
+
+    try:
+        for item in collection.find({}, {'_id': False}):
+            if validate_schema(item):
+                documents.append(item)
+    except OperationFailure:
+        print("load_data operation failed")
+    else:
+        return documents
+```
+funcionamiento:
 
 <img src="./readme_pictures/read_pruebas_bbdd.PNG" width =45%>
 <img src="./readme_pictures/read_pruebas.PNG" width = 45%>
