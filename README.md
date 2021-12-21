@@ -58,7 +58,7 @@ La aplicación ha sido desarrollada con el lenguaje de programacion python versi
 - Para realizar los test sobre los módulos del programa hemos usado pytest version 6.2.5.
 - La conexión con la base de datos tuvimos que instalar la librería de pymongo version 3.12.1.
 - Para la conexión a la BBDD con pymongo tuvimos que añadir certifi para la conexión SSL.
-- La validación de los schema se ha instalado el módulo jsonchema.
+- Para la validación del schema se ha instalado el módulo jsonchema.
 
 ## tabla de tecnologías
 
